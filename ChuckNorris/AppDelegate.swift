@@ -9,14 +9,36 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder {
-  var window: UIWindow?
+final class AppDelegate: UIResponder {
+  private var window: UIWindow?
+  private var applicationCoordinator: ApplicationCoordinator?
+
+  private func configuredWindow() -> UIWindow {
+    let window = UIWindow(frame: UIScreen.main.bounds)
+    window.tintColor = Color.orange
+    self.window = window
+    return window
+  }
+
+  private func configureNavigationBar() {
+    let appearance = UINavigationBar.appearance()
+    appearance.barTintColor = Color.black
+    appearance.titleTextAttributes = [.foregroundColor: Color.white]
+  }
 }
 
 extension AppDelegate: UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = ViewController()
+    configureNavigationBar()
+    let window = configuredWindow()
+    let applicationCoordinator = ApplicationCoordinator(window: window)
+    self.applicationCoordinator = applicationCoordinator
+    applicationCoordinator.start()
     return true
   }
+}
+
+enum Result<T, E: Error> {
+  case success(T)
+  case error(E)
 }
