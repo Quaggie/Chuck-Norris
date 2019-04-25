@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E040CED5227260A300CD30D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CED4227260A300CD30D7 /* AppDelegate.swift */; };
 		E040CED7227260A300CD30D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CED6227260A300CD30D7 /* ViewController.swift */; };
-		E040CEDA227260A300CD30D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E040CED8227260A300CD30D7 /* Main.storyboard */; };
 		E040CEDC227260A400CD30D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E040CEDB227260A400CD30D7 /* Assets.xcassets */; };
 		E040CEDF227260A400CD30D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E040CEDD227260A400CD30D7 /* LaunchScreen.storyboard */; };
 		E040CEEA227260A500CD30D7 /* ChuckNorrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CEE9227260A500CD30D7 /* ChuckNorrisTests.swift */; };
@@ -29,7 +28,6 @@
 		E040CED1227260A300CD30D7 /* ChuckNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E040CED4227260A300CD30D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E040CED6227260A300CD30D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E040CED9227260A300CD30D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E040CEDB227260A400CD30D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E040CEDE227260A400CD30D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E040CEE0227260A400CD30D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +77,6 @@
 			children = (
 				E040CED4227260A300CD30D7 /* AppDelegate.swift */,
 				E040CED6227260A300CD30D7 /* ViewController.swift */,
-				E040CED8227260A300CD30D7 /* Main.storyboard */,
 				E040CEDB227260A400CD30D7 /* Assets.xcassets */,
 				E040CEDD227260A400CD30D7 /* LaunchScreen.storyboard */,
 				E040CEE0227260A400CD30D7 /* Info.plist */,
@@ -179,7 +176,6 @@
 			files = (
 				E040CEDF227260A400CD30D7 /* LaunchScreen.storyboard in Resources */,
 				E040CEDC227260A400CD30D7 /* Assets.xcassets in Resources */,
-				E040CEDA227260A300CD30D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +217,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E040CED8227260A300CD30D7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E040CED9227260A300CD30D7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E040CEDD227260A400CD30D7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -360,8 +348,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7397PXU582;
+				DEVELOPMENT_TEAM = ZPEUGUU6JH;
 				INFOPLIST_FILE = ChuckNorris/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -369,6 +358,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonathanbijos.ChuckNorris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -378,8 +368,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7397PXU582;
+				DEVELOPMENT_TEAM = ZPEUGUU6JH;
 				INFOPLIST_FILE = ChuckNorris/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -387,6 +378,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonathanbijos.ChuckNorris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
