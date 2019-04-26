@@ -12,16 +12,25 @@ final class FactsViewController: UIViewController {
   // MARK: - Properties -
   private let coordinator: FactsCoordinatorProtocol
   private let service: ChuckNorrisWebserviceProtocol
+  private let database: DatabaseProtocol
   private lazy var dataSource = FactsDataSource(collectionView: screen.collectionView, delegate: self, jokes: jokes)
-  private var jokes: [Joke] = []
+  private var jokes: [Joke] = [] {
+    didSet {
+      dataSource = FactsDataSource(collectionView: screen.collectionView, delegate: self, jokes: jokes)
+      screen.collectionView.dataSource = dataSource
+    }
+  }
 
   // MARK: - Views -
   private let screen = FactsViewControllerScreen()
 
   // MARK: - Init -
-  init(coordinator: FactsCoordinatorProtocol, service: ChuckNorrisWebserviceProtocol = ChuckNorrisWebservice()) {
+  init(coordinator: FactsCoordinatorProtocol,
+       service: ChuckNorrisWebserviceProtocol = ChuckNorrisWebservice(),
+       database: DatabaseProtocol = Database()) {
     self.coordinator = coordinator
     self.service = service
+    self.database = database
     super.init(nibName: nil, bundle: nil)
     navigationItem.title = "Chuck Norris Facts"
   }
@@ -38,22 +47,20 @@ final class FactsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupCollectionView()
-
-    // Mock for testing
-    jokes.append(Joke(category: ["Film"], iconUrl: "", id: "", url: "", value: "kasjhdfka sjdfajsf jashdf ajhsdfk jahdsfkjads fjhads jfhas djfhas dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa sjdhfk ajshfk jahsdf jads jfhas jdfhak sjdhfk ajsdhf sdhf  dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks"))
-    jokes.append(Joke(category: ["Music"], iconUrl: "", id: "", url: "", value: "asdfasdfasdfasdfasdf"))
-    jokes.append(Joke(category: ["Film"], iconUrl: "", id: "", url: "", value: "kasjhdfka sjdfajsf jashdf ajhsdfk jahdsfkjads fjhads jfhas djfhas dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa sjdhfk ajshfk jahsdf jads jfhas jdfhak sjdhfk ajsdhf sdhf  dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa"))
-    jokes.append(Joke(category: nil, iconUrl: "", id: "", url: "", value: "asdkfhaskdjfhaksjdfhaksjdfh asdfas"))
-    jokes.append(Joke(category: ["Music"], iconUrl: "", id: "", url: "", value: "asdfasdfasdfasdfasdf asdfasdfasdfasdfasdf"))
-    jokes.append(Joke(category: ["Music"], iconUrl: "", id: "", url: "", value: "AHdfas dfiuasdyfa9sdyf asdfasdfiasdiufa sdifuahsdf asdfasd"))
-    dataSource = FactsDataSource(collectionView: screen.collectionView, delegate: self, jokes: jokes)
-    screen.collectionView.dataSource = dataSource
+    setupOfflineData()
   }
 
   // MARK: - Setup -
   private func setupCollectionView() {
     screen.collectionView.delegate = self
     screen.collectionView.dataSource = dataSource
+  }
+
+  private func setupOfflineData() {
+    let offlineJokes: [Joke]? = database.getObject(key: Database.Keys.facts.rawValue)
+    if let offlineJokes = offlineJokes {
+      jokes = offlineJokes
+    }
   }
 }
 

@@ -34,6 +34,19 @@ extension AppDelegate: UIApplicationDelegate {
     let applicationCoordinator = ApplicationCoordinator(window: window)
     self.applicationCoordinator = applicationCoordinator
     applicationCoordinator.start()
+
+    // TODO: REMOVE(MOCK)
+    var jokes: [Joke] = []
+    jokes.append(Joke(category: ["Film"], iconUrl: "", id: "", url: "", value: "kasjhdfka sjdfajsf jashdf ajhsdfk jahdsfkjads fjhads jfhas djfhas dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa sjdhfk ajshfk jahsdf jads jfhas jdfhak sjdhfk ajsdhf sdhf  dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks"))
+    jokes.append(Joke(category: ["Music"], iconUrl: "", id: "", url: "", value: "asdfasdfasdfasdfasdf"))
+    jokes.append(Joke(category: ["Film"], iconUrl: "", id: "", url: "", value: "kasjhdfka sjdfajsf jashdf ajhsdfk jahdsfkjads fjhads jfhas djfhas dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa sjdhfk ajshfk jahsdf jads jfhas jdfhak sjdhfk ajsdhf sdhf  dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa"))
+    jokes.append(Joke(category: nil, iconUrl: "", id: "", url: "", value: "asdkfhaskdjfhaksjdfhaksjdfh asdfas"))
+    jokes.append(Joke(category: ["Music"], iconUrl: "", id: "", url: "", value: "asdfasdfasdfasdfasdf asdfasdfasdfasdfasdf"))
+    jokes.append(Joke(category: ["Music"], iconUrl: "", id: "", url: "", value: "AHdfas dfiuasdyfa9sdyf asdfasdfiasdiufa sdifuahsdf asdfasd"))
+
+    let database = Database()
+    database.save(object: jokes, forKey: Database.Keys.facts.rawValue)
+
     return true
   }
 }
