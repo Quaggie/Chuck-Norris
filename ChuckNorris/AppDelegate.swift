@@ -37,8 +37,3 @@ extension AppDelegate: UIApplicationDelegate {
     return true
   }
 }
-
-enum Result<T, E: Error> {
-  case success(T)
-  case error(E)
-}

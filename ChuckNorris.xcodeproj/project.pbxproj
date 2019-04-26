@@ -27,6 +27,13 @@
 		E040CF18227288DC00CD30D7 /* FactsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF17227288DC00CD30D7 /* FactsCollectionViewCell.swift */; };
 		E040CF1A2272894B00CD30D7 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF192272894B00CD30D7 /* UILabel+Extension.swift */; };
 		E040CF1C22728BA400CD30D7 /* FactsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF1B22728BA400CD30D7 /* FactsDataSource.swift */; };
+		E040CF1F22729A5400CD30D7 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF1E22729A5400CD30D7 /* Joke.swift */; };
+		E040CF2222729CEA00CD30D7 /* JokesSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF2122729CEA00CD30D7 /* JokesSearchResponse.swift */; };
+		E040CF2422729ED000CD30D7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF2322729ED000CD30D7 /* Request.swift */; };
+		E040CF2622729FA900CD30D7 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF2522729FA900CD30D7 /* Params.swift */; };
+		E040CF2822729FBC00CD30D7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF2722729FBC00CD30D7 /* Response.swift */; };
+		E040CF2A22729FF000CD30D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF2922729FF000CD30D7 /* Result.swift */; };
+		E040CF2D2272A44100CD30D7 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF2C2272A44100CD30D7 /* Endpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +71,13 @@
 		E040CF17227288DC00CD30D7 /* FactsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsCollectionViewCell.swift; sourceTree = "<group>"; };
 		E040CF192272894B00CD30D7 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		E040CF1B22728BA400CD30D7 /* FactsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsDataSource.swift; sourceTree = "<group>"; };
+		E040CF1E22729A5400CD30D7 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		E040CF2122729CEA00CD30D7 /* JokesSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesSearchResponse.swift; sourceTree = "<group>"; };
+		E040CF2322729ED000CD30D7 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		E040CF2522729FA900CD30D7 /* Params.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
+		E040CF2722729FBC00CD30D7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		E040CF2922729FF000CD30D7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E040CF2C2272A44100CD30D7 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				E040CEFD2272671200CD30D7 /* Components */,
+				E040CF1D22729A3E00CD30D7 /* Models */,
 				E040CF062272682500CD30D7 /* Networking */,
 				E040CF0E22726EBC00CD30D7 /* Constants */,
 				E040CEF62272661900CD30D7 /* Extensions */,
@@ -172,8 +187,10 @@
 		E040CF062272682500CD30D7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				E040CF082272684200CD30D7 /* ChuckNorrisWebservice.swift */,
-				E040CF1522727BA000CD30D7 /* ApiError.swift */,
+				E040CF2E2272A44900CD30D7 /* Webservices */,
+				E040CF2B2272A00700CD30D7 /* Helpers */,
+				E040CF2322729ED000CD30D7 /* Request.swift */,
+				E040CF2C2272A44100CD30D7 /* Endpoints.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -200,6 +217,42 @@
 				E040CF0F22726ECC00CD30D7 /* Color.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		E040CF1D22729A3E00CD30D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E040CF2022729CD200CD30D7 /* Responses */,
+				E040CF1E22729A5400CD30D7 /* Joke.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E040CF2022729CD200CD30D7 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				E040CF2122729CEA00CD30D7 /* JokesSearchResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		E040CF2B2272A00700CD30D7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E040CF2922729FF000CD30D7 /* Result.swift */,
+				E040CF1522727BA000CD30D7 /* ApiError.swift */,
+				E040CF2722729FBC00CD30D7 /* Response.swift */,
+				E040CF2522729FA900CD30D7 /* Params.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E040CF2E2272A44900CD30D7 /* Webservices */ = {
+			isa = PBXGroup;
+			children = (
+				E040CF082272684200CD30D7 /* ChuckNorrisWebservice.swift */,
+			);
+			path = Webservices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +359,7 @@
 				E040CF092272684200CD30D7 /* ChuckNorrisWebservice.swift in Sources */,
 				E040CF1C22728BA400CD30D7 /* FactsDataSource.swift in Sources */,
 				E040CF1022726ECC00CD30D7 /* Color.swift in Sources */,
+				E040CF2222729CEA00CD30D7 /* JokesSearchResponse.swift in Sources */,
 				E040CEF82272662400CD30D7 /* UIView+Extension.swift in Sources */,
 				E040CF0D22726C5300CD30D7 /* CodeView.swift in Sources */,
 				E040CF002272675200CD30D7 /* Coordinator.swift in Sources */,
@@ -314,10 +368,16 @@
 				E040CF1A2272894B00CD30D7 /* UILabel+Extension.swift in Sources */,
 				E040CED5227260A300CD30D7 /* AppDelegate.swift in Sources */,
 				E040CF18227288DC00CD30D7 /* FactsCollectionViewCell.swift in Sources */,
+				E040CF2A22729FF000CD30D7 /* Result.swift in Sources */,
 				E040CEF52272658000CD30D7 /* FactsViewController.swift in Sources */,
 				E040CF1422727A6D00CD30D7 /* FactsViewControllerViewState.swift in Sources */,
+				E040CF2622729FA900CD30D7 /* Params.swift in Sources */,
+				E040CF1F22729A5400CD30D7 /* Joke.swift in Sources */,
 				E040CF05227267C600CD30D7 /* FactsCoordinator.swift in Sources */,
+				E040CF2822729FBC00CD30D7 /* Response.swift in Sources */,
+				E040CF2422729ED000CD30D7 /* Request.swift in Sources */,
 				E040CF1222727A2000CD30D7 /* FactsViewControllerScreen.swift in Sources */,
+				E040CF2D2272A44100CD30D7 /* Endpoints.swift in Sources */,
 				E040CF022272679800CD30D7 /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
