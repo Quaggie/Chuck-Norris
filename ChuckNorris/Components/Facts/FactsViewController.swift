@@ -9,9 +9,14 @@
 import UIKit
 
 final class FactsViewController: UIViewController {
-  // MARK: - Properties
+  // MARK: - Properties -
   private let coordinator: FactsCoordinatorProtocol
   private let service: ChuckNorrisWebserviceProtocol
+  private lazy var dataSource = FactsDataSource(collectionView: screen.collectionView, jokes: jokes)
+  private var jokes: [String] =  ["asdfasdfasdfasdfasdf ", "kasjhdfka sjdfajsf jashdf ajhsdfk jahdsfkjads fjhads jfhas djfhas dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa sjdhfk ajshfk jahsdf jads jfhas jdfhak sjdhfk ajsdhf sdhf", "asdkfhaskdjfhaksjdfhaksjdfh"]
+
+  // MARK: - Views -
+  private let screen = FactsViewControllerScreen()
 
   // MARK: - Init -
   init(coordinator: FactsCoordinatorProtocol, service: ChuckNorrisWebserviceProtocol = ChuckNorrisWebservice()) {
@@ -26,22 +31,35 @@ final class FactsViewController: UIViewController {
   }
 
   // MARK: - Lifecycle -
+  override func loadView() {
+    self.view = screen
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupViews()
+    setupCollectionView()
+  }
+
+  // MARK: - Setup -
+  private func setupCollectionView() {
+    screen.collectionView.delegate = self
+    screen.collectionView.dataSource = dataSource
   }
 }
 
-extension FactsViewController: CodeView {
-  func buildViewHierarchy() {
-
+// MARK: - UICollectionViewDelegate -
+extension FactsViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print("Item \(indexPath.item) selected")
   }
+}
 
-  func setupConstraints() {
-
-  }
-
-  func setupAdditionalConfiguration() {
-    view.backgroundColor = .white
+extension FactsViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                      sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let joke = jokes[indexPath.item]
+    let horizontalMargins = screen.insets.left - screen.insets.right
+    return FactsCollectionViewCell.size(width: collectionView.frame.width - horizontalMargins,
+                                        text: joke)
   }
 }

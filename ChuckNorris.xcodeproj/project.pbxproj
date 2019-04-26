@@ -21,6 +21,12 @@
 		E040CF092272684200CD30D7 /* ChuckNorrisWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF082272684200CD30D7 /* ChuckNorrisWebservice.swift */; };
 		E040CF0D22726C5300CD30D7 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF0C22726C5300CD30D7 /* CodeView.swift */; };
 		E040CF1022726ECC00CD30D7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF0F22726ECC00CD30D7 /* Color.swift */; };
+		E040CF1222727A2000CD30D7 /* FactsViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF1122727A2000CD30D7 /* FactsViewControllerScreen.swift */; };
+		E040CF1422727A6D00CD30D7 /* FactsViewControllerViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF1322727A6D00CD30D7 /* FactsViewControllerViewState.swift */; };
+		E040CF1622727BA000CD30D7 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF1522727BA000CD30D7 /* ApiError.swift */; };
+		E040CF18227288DC00CD30D7 /* FactsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF17227288DC00CD30D7 /* FactsCollectionViewCell.swift */; };
+		E040CF1A2272894B00CD30D7 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF192272894B00CD30D7 /* UILabel+Extension.swift */; };
+		E040CF1C22728BA400CD30D7 /* FactsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CF1B22728BA400CD30D7 /* FactsDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,12 @@
 		E040CF082272684200CD30D7 /* ChuckNorrisWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisWebservice.swift; sourceTree = "<group>"; };
 		E040CF0C22726C5300CD30D7 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		E040CF0F22726ECC00CD30D7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E040CF1122727A2000CD30D7 /* FactsViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewControllerScreen.swift; sourceTree = "<group>"; };
+		E040CF1322727A6D00CD30D7 /* FactsViewControllerViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewControllerViewState.swift; sourceTree = "<group>"; };
+		E040CF1522727BA000CD30D7 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		E040CF17227288DC00CD30D7 /* FactsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsCollectionViewCell.swift; sourceTree = "<group>"; };
+		E040CF192272894B00CD30D7 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		E040CF1B22728BA400CD30D7 /* FactsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +134,7 @@
 				E040CEF72272662400CD30D7 /* UIView+Extension.swift */,
 				E040CEF92272669100CD30D7 /* UICollectionView+Extension.swift */,
 				E040CEFB227266D300CD30D7 /* UICollectionReusableView+Extension.swift */,
+				E040CF192272894B00CD30D7 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -146,8 +159,12 @@
 		E040CF03227267BC00CD30D7 /* Facts */ = {
 			isa = PBXGroup;
 			children = (
-				E040CEF42272658000CD30D7 /* FactsViewController.swift */,
 				E040CF04227267C600CD30D7 /* FactsCoordinator.swift */,
+				E040CEF42272658000CD30D7 /* FactsViewController.swift */,
+				E040CF1122727A2000CD30D7 /* FactsViewControllerScreen.swift */,
+				E040CF1322727A6D00CD30D7 /* FactsViewControllerViewState.swift */,
+				E040CF1B22728BA400CD30D7 /* FactsDataSource.swift */,
+				E040CF17227288DC00CD30D7 /* FactsCollectionViewCell.swift */,
 			);
 			path = Facts;
 			sourceTree = "<group>";
@@ -156,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				E040CF082272684200CD30D7 /* ChuckNorrisWebservice.swift */,
+				E040CF1522727BA000CD30D7 /* ApiError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -286,14 +304,20 @@
 			files = (
 				E040CEFA2272669100CD30D7 /* UICollectionView+Extension.swift in Sources */,
 				E040CF092272684200CD30D7 /* ChuckNorrisWebservice.swift in Sources */,
+				E040CF1C22728BA400CD30D7 /* FactsDataSource.swift in Sources */,
 				E040CF1022726ECC00CD30D7 /* Color.swift in Sources */,
 				E040CEF82272662400CD30D7 /* UIView+Extension.swift in Sources */,
 				E040CF0D22726C5300CD30D7 /* CodeView.swift in Sources */,
 				E040CF002272675200CD30D7 /* Coordinator.swift in Sources */,
 				E040CEFC227266D300CD30D7 /* UICollectionReusableView+Extension.swift in Sources */,
+				E040CF1622727BA000CD30D7 /* ApiError.swift in Sources */,
+				E040CF1A2272894B00CD30D7 /* UILabel+Extension.swift in Sources */,
 				E040CED5227260A300CD30D7 /* AppDelegate.swift in Sources */,
+				E040CF18227288DC00CD30D7 /* FactsCollectionViewCell.swift in Sources */,
 				E040CEF52272658000CD30D7 /* FactsViewController.swift in Sources */,
+				E040CF1422727A6D00CD30D7 /* FactsViewControllerViewState.swift in Sources */,
 				E040CF05227267C600CD30D7 /* FactsCoordinator.swift in Sources */,
+				E040CF1222727A2000CD30D7 /* FactsViewControllerScreen.swift in Sources */,
 				E040CF022272679800CD30D7 /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
