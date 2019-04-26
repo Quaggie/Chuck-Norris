@@ -10,10 +10,10 @@ import UIKit
 
 final class FactsDataSource: NSObject {
   // MARK: - Properties -
-  private let jokes: [String]
+  private let jokes: [Joke]
 
   // MARK: - Init -
-  init(collectionView: UICollectionView, jokes: [String]) {
+  init(collectionView: UICollectionView, jokes: [Joke]) {
     self.jokes = jokes
     super.init()
     register(collectionView: collectionView)
@@ -34,7 +34,7 @@ extension FactsDataSource: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as FactsCollectionViewCell
     let joke = jokes[indexPath.item]
-    cell.setup(text: joke)
+    cell.setup(joke: joke)
     return cell
   }
 }

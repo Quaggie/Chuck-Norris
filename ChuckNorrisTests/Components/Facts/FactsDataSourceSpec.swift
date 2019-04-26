@@ -15,11 +15,11 @@ final class FactsDataSourceSpec: QuickSpec {
     describe("FactsDataSource") {
       var sut: FactsDataSource!
       var collectionView: UICollectionView!
-      var jokes: [String] = []
+      var jokes: [Joke] = []
 
       beforeEach {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        jokes = Joke.mockJokes(total: 2).map { $0.value }
+        jokes = Joke.mockJokes(total: 2)
         sut = FactsDataSource(collectionView: collectionView, jokes: jokes)
       }
 

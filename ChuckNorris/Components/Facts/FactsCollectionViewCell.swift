@@ -23,7 +23,7 @@ final class FactsCollectionViewCell: UICollectionViewCell {
     label.font = UIFont.boldSystemFont(ofSize: fontSize)
 
     let height = label.height(width: correctWidth)
-    let correctHeight = height + insets.top + insets.bottom
+    let correctHeight =  insets.top + height + 8 + 44 + insets.bottom // [inset-text-margin(8)-button(44)-inset]
     return CGSize(width: correctWidth, height: correctHeight)
   }
 
@@ -32,9 +32,8 @@ final class FactsCollectionViewCell: UICollectionViewCell {
   }
 
   // MARK: - Views -
-
   private let label: UILabel = {
-    let label = UILabel(frame: .zero)
+    let label = UILabel()
     label.numberOfLines = 0
     label.textColor = Color.black
     label.font = UIFont.boldSystemFont(ofSize: UIFont.smallSystemFontSize)
@@ -42,12 +41,51 @@ final class FactsCollectionViewCell: UICollectionViewCell {
     return label
   }()
 
-  // MARK: - Public functions -
-  func setup(text: String) {
-    let fontSize = FactsCollectionViewCell.getFontSize(from: text)
-    label.font = UIFont.boldSystemFont(ofSize: fontSize)
-    label.text = text
+  private let categoryCardView: UIView = {
+    let view = UIView()
+    view.backgroundColor = Color.black
+    view.layer.cornerRadius = 14
+    return view
+  }()
+
+  private let categoryCardLabel: UILabel = {
+    let label = UILabel()
+    label.textColor = Color.white
+    label.font = UIFont.boldSystemFont(ofSize: UIFont.smallSystemFontSize)
+    label.accessibilityIdentifier = "factsCollectionViewCellCategoryCardLabel"
+    return label
+  }()
+
+  private let shareButton: UIButton = {
+    let button = UIButton(type: .system)
+    button.setImage(#imageLiteral(resourceName: "icon_pdf").withRenderingMode(.alwaysTemplate), for: .normal)
+    button.imageEdgeInsets = .init(top: 4, left: 4, bottom: 4, right: 4)
+    return button
+  }()
+
+  // MARK: - Init -
+  override init(frame: CGRect) {
+    super.init(frame: frame)
     setupViews()
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+  // MARK: - Public functions -
+  func setup(joke: Joke) {
+    let fontSize = FactsCollectionViewCell.getFontSize(from: joke.value)
+    label.font = UIFont.boldSystemFont(ofSize: fontSize)
+    label.text = joke.value
+
+    let categoryLabelText: String
+    if let category = joke.category?.first {
+      categoryLabelText = category
+    } else {
+      categoryLabelText = "Uncategorized"
+    }
+    categoryCardLabel.text = categoryLabelText.uppercased()
   }
 }
 
@@ -55,14 +93,35 @@ final class FactsCollectionViewCell: UICollectionViewCell {
 extension FactsCollectionViewCell: CodeView {
   func buildViewHierarchy() {
     contentView.addSubview(label)
+    contentView.addSubview(categoryCardView)
+    categoryCardView.addSubview(categoryCardLabel)
+    contentView.addSubview(shareButton)
   }
 
   func setupConstraints() {
     label.anchor(top: contentView.topAnchor,
                  leading: contentView.leadingAnchor,
-                 bottom: contentView.bottomAnchor,
                  trailing: contentView.trailingAnchor,
-                 insets: FactsCollectionViewCell.insets)
+                 insets: .init(top: FactsCollectionViewCell.insets.top,
+                               left: FactsCollectionViewCell.insets.left,
+                               bottom: 0,
+                               right: FactsCollectionViewCell.insets.right))
+
+    categoryCardView.anchor(leading: contentView.leadingAnchor,
+                            insets: .init(top: 0, left: FactsCollectionViewCell.insets.left, bottom: 0, right: 0))
+    categoryCardView.centerYAnchor.constraint(equalTo: shareButton.centerYAnchor).isActive = true
+    categoryCardView.anchor(height: 28)
+
+    categoryCardLabel.anchor(top: categoryCardView.topAnchor,
+                             leading: categoryCardView.leadingAnchor,
+                             bottom: categoryCardView.bottomAnchor,
+                             trailing: categoryCardView.trailingAnchor,
+                             insets: .init(top: 4, left: 16, bottom: 4, right: 16))
+
+    shareButton.anchor(top: label.bottomAnchor,
+                       trailing: contentView.trailingAnchor,
+                       insets: .init(top: 8, left: 0, bottom: 0, right: FactsCollectionViewCell.insets.right))
+    shareButton.anchor(height: 44, width: 44)
   }
 
   func setupAdditionalConfiguration() {
