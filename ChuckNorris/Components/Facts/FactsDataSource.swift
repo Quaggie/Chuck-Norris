@@ -11,9 +11,11 @@ import UIKit
 final class FactsDataSource: NSObject {
   // MARK: - Properties -
   private let jokes: [Joke]
+  private unowned let delegate: FactsCollectionViewCellDelegate
 
   // MARK: - Init -
-  init(collectionView: UICollectionView, jokes: [Joke]) {
+  init(collectionView: UICollectionView, delegate: FactsCollectionViewCellDelegate, jokes: [Joke]) {
+    self.delegate = delegate
     self.jokes = jokes
     super.init()
     register(collectionView: collectionView)
@@ -34,7 +36,7 @@ extension FactsDataSource: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as FactsCollectionViewCell
     let joke = jokes[indexPath.item]
-    cell.setup(joke: joke)
+    cell.setup(joke: joke, delegate: delegate)
     return cell
   }
 }

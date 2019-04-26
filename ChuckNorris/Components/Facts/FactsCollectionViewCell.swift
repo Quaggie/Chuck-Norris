@@ -8,28 +8,35 @@
 
 import UIKit
 
+protocol FactsCollectionViewCellDelegate: AnyObject {
+  func factsCollectionViewCellDidTapShare(joke: Joke)
+}
+
 final class FactsCollectionViewCell: UICollectionViewCell {
   // MARK: - Static vars -
   static let insets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
 
   // MARK: - Static functions -
   static func size(width: CGFloat, text: String) -> CGSize {
-    let correctWidth = width - insets.left - insets.right
-
     let label = UILabel()
     label.text = text
 
     let fontSize = getFontSize(from: text)
     label.font = UIFont.boldSystemFont(ofSize: fontSize)
 
-    let height = label.height(width: correctWidth)
-    let correctHeight =  insets.top + height + 8 + 44 + insets.bottom // [inset-text-margin(8)-button(44)-inset]
-    return CGSize(width: correctWidth, height: correctHeight)
+    let cardWidth = width - insets.left - insets.right
+    let height = label.height(width: cardWidth)
+    let totalHeight = insets.top + height + 8 + 44 + insets.bottom // [inset-text-margin(8)-button(44)-inset]
+    return CGSize(width: width, height: totalHeight)
   }
 
   static func getFontSize(from text: String) -> CGFloat {
     return text.count > 80 ? UIFont.smallSystemFontSize : 28
   }
+
+  // MARK: - Properties -
+  private var joke: Joke?
+  private weak var delegate: FactsCollectionViewCellDelegate?
 
   // MARK: - Views -
   private let label: UILabel = {
@@ -56,10 +63,11 @@ final class FactsCollectionViewCell: UICollectionViewCell {
     return label
   }()
 
-  private let shareButton: UIButton = {
+  private lazy var shareButton: UIButton = {
     let button = UIButton(type: .system)
     button.setImage(#imageLiteral(resourceName: "icon_pdf").withRenderingMode(.alwaysTemplate), for: .normal)
     button.imageEdgeInsets = .init(top: 4, left: 4, bottom: 4, right: 4)
+    button.addTarget(self, action: #selector(didTapShareButton), for: .touchUpInside)
     return button
   }()
 
@@ -74,7 +82,9 @@ final class FactsCollectionViewCell: UICollectionViewCell {
   }
 
   // MARK: - Public functions -
-  func setup(joke: Joke) {
+  func setup(joke: Joke, delegate: FactsCollectionViewCellDelegate) {
+    self.joke = joke
+    self.delegate = delegate
     let fontSize = FactsCollectionViewCell.getFontSize(from: joke.value)
     label.font = UIFont.boldSystemFont(ofSize: fontSize)
     label.text = joke.value
@@ -86,6 +96,16 @@ final class FactsCollectionViewCell: UICollectionViewCell {
       categoryLabelText = "Uncategorized"
     }
     categoryCardLabel.text = categoryLabelText.uppercased()
+  }
+}
+
+// MARK: - Actions -
+private extension FactsCollectionViewCell {
+  @objc func didTapShareButton() {
+    guard let joke = joke else {
+      fatalError("Missing setup call")
+    }
+    delegate?.factsCollectionViewCellDidTapShare(joke: joke)
   }
 }
 
@@ -118,9 +138,12 @@ extension FactsCollectionViewCell: CodeView {
                              trailing: categoryCardView.trailingAnchor,
                              insets: .init(top: 4, left: 16, bottom: 4, right: 16))
 
-    shareButton.anchor(top: label.bottomAnchor,
+    shareButton.anchor(bottom: contentView.bottomAnchor,
                        trailing: contentView.trailingAnchor,
-                       insets: .init(top: 8, left: 0, bottom: 0, right: FactsCollectionViewCell.insets.right))
+                       insets: .init(top: 8,
+                                     left: 0,
+                                     bottom: FactsCollectionViewCell.insets.bottom,
+                                     right: FactsCollectionViewCell.insets.right))
     shareButton.anchor(height: 44, width: 44)
   }
 
@@ -133,8 +156,8 @@ extension FactsCollectionViewCell: CodeView {
 
     applyShadow(color: .black,
                 offset: CGSize(width: 3, height: 2),
-                opacity: 0.09, radius: 24,
-                shadowPath: UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath)
+                opacity: 0.09,
+                radius: 24)
 
     contentView.accessibilityIdentifier = "factsCollectionViewCellContentView"
   }

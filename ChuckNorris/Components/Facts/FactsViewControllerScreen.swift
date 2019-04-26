@@ -10,7 +10,7 @@ import UIKit
 
 final class FactsViewControllerScreen: UIView {
   // MARK: - Properties -
-  let insets: UIEdgeInsets = .init(top: 8, left: 8, bottom: 8, right: 8)
+  let margin: CGFloat = 8
 
   // MARK: - Views -
   lazy var collectionView: UICollectionView = {
@@ -18,7 +18,7 @@ final class FactsViewControllerScreen: UIView {
     flowLayout.scrollDirection = .vertical
     flowLayout.minimumLineSpacing = 8
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-    collectionView.contentInset = insets
+    collectionView.contentInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
     collectionView.accessibilityIdentifier = "factsViewControllerCollectionView"
     collectionView.backgroundColor = Color.white
     collectionView.backgroundView?.backgroundColor = Color.white
