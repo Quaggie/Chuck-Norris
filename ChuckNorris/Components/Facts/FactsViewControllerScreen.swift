@@ -62,5 +62,6 @@ extension FactsViewControllerScreen: CodeView {
 
   func setupAdditionalConfiguration() {
     backgroundColor = Color.white
+    accessibilityIdentifier = "factsViewControllerScreen"
   }
 }

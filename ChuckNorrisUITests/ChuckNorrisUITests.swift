@@ -1,15 +1,14 @@
 //
-//  ChuckNorrisTests.swift
-//  ChuckNorrisTests
+//  ChuckNorrisUITests.swift
+//  ChuckNorrisUITests
 //
-//  Created by Jonathan Bijos on 25/04/19.
+//  Created by jonathan.p.bijos on 26/04/19.
 //  Copyright © 2019 jonathanbijos. All rights reserved.
 //
 
 import XCTest
-@testable import ChuckNorris
 
-class ChuckNorrisTests: XCTestCase {
+class ChuckNorrisUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
