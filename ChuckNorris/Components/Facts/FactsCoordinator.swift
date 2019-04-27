@@ -15,21 +15,20 @@ protocol FactsCoordinatorProtocol: AnyObject {
 final class FactsCoordinator: Coordinator {
   // MARK: - Views -
   private let navigationController: UINavigationController
-  private let service: ChuckNorrisWebserviceProtocol
 
   // MARK: - Init -
-  init(navigationController: UINavigationController, service: ChuckNorrisWebserviceProtocol = ChuckNorrisWebservice()) {
+  init(navigationController: UINavigationController) {
     self.navigationController = navigationController
-    self.service = service
   }
 
   // MARK: - Coordinator -
   func start() {
-    let controller = FactsViewController(coordinator: self, service: service)
+    let controller = FactsViewController(coordinator: self)
     navigationController.viewControllers = [controller]
   }
 }
 
+// MARK: - FactsCoordinatorProtocol -
 extension FactsCoordinator: FactsCoordinatorProtocol {
   func share(url: URL) {
     let activityViewController = UIActivityViewController(activityItems: [url], applicationActivities: nil)

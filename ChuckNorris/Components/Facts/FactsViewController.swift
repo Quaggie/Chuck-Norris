@@ -11,7 +11,6 @@ import UIKit
 final class FactsViewController: UIViewController {
   // MARK: - Properties -
   private let coordinator: FactsCoordinatorProtocol
-  private let service: ChuckNorrisWebserviceProtocol
   private let database: DatabaseProtocol
   private var state: FactsViewControllerViewState = .empty {
     didSet {
@@ -31,11 +30,8 @@ final class FactsViewController: UIViewController {
   private let screen = FactsViewControllerScreen()
 
   // MARK: - Init -
-  init(coordinator: FactsCoordinatorProtocol,
-       service: ChuckNorrisWebserviceProtocol = ChuckNorrisWebservice(),
-       database: DatabaseProtocol = Database()) {
+  init(coordinator: FactsCoordinatorProtocol, database: DatabaseProtocol = Database()) {
     self.coordinator = coordinator
-    self.service = service
     self.database = database
     super.init(nibName: nil, bundle: nil)
   }

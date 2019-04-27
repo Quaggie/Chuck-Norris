@@ -1,5 +1,5 @@
 //
-//  FactsEmptyView.swift
+//  SearchEmptyView.swift
 //  ChuckNorris
 //
 //  Created by Jonathan Bijos on 26/04/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class FactsEmptyView: UIView {
+final class SearchEmptyView: UIView {
   // MARK: - Static -
   static let height: CGFloat = 220
 
@@ -21,7 +21,7 @@ final class FactsEmptyView: UIView {
   }()
   private let titleLabel: UILabel = {
     let label = UILabel()
-    label.text = "No jokes found 😫\n\n Search for a joke by clicking on the search icon above"
+    label.text = "No jokes found with the current search 😫"
     label.font = UIFont.boldSystemFont(ofSize: 16)
     label.numberOfLines = 0
     label.lineBreakMode = .byWordWrapping
@@ -41,7 +41,7 @@ final class FactsEmptyView: UIView {
 }
 
 // MARK: - CodeView -
-extension FactsEmptyView: CodeView {
+extension SearchEmptyView: CodeView {
   func buildViewHierarchy() {
     addSubview(imgView)
     addSubview(titleLabel)
@@ -60,6 +60,6 @@ extension FactsEmptyView: CodeView {
   }
 
   func setupAdditionalConfiguration() {
-    accessibilityIdentifier = "factsEmptyView"
+    accessibilityIdentifier = "searchEmptyView"
   }
 }

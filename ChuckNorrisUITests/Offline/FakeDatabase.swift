@@ -1,5 +1,5 @@
 //
-//  MockDatabase.swift
+//  FakeDatabase.swift
 //  ChuckNorrisUITests
 //
 //  Created by Jonathan Bijos on 26/04/19.
@@ -8,10 +8,17 @@
 
 @testable import ChuckNorris
 
-final class MockDatabase: DatabaseProtocol {
+final class FakeDatabase {
   private var totalJokes: Int = 0
   private var categories: [ChuckNorris.Category] = []
 
+  func reset() {
+    totalJokes = 0
+    categories = []
+  }
+}
+
+extension FakeDatabase: DatabaseProtocol {
   func save<T: Codable>(object: T, forKey key: String) {
     guard let keyType = Database.Keys.init(rawValue: key) else {
       return

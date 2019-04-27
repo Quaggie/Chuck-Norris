@@ -6,10 +6,7 @@
 //  Copyright © 2019 jonathanbijos. All rights reserved.
 //
 
-import UIKit
-
-enum FactsViewControllerViewState: Equatable {
-  case loading
+enum FactsViewControllerViewState {
   case finished
   case empty
 }
