@@ -7,7 +7,7 @@
 //
 
 struct Joke: Codable {
-  var category: [String]?
+  var category: [Category]?
   let iconUrl: String
   let id: String
   let url: String

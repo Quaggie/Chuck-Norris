@@ -16,11 +16,12 @@ final class FactsDataSourceSpec: QuickSpec {
       var sut: FactsDataSource!
       var collectionView: UICollectionView!
       var jokes: [Joke] = []
+      let delegate = FakeCellDelegate()
 
       beforeEach {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         jokes = Joke.mockJokes(total: 2)
-        sut = FactsDataSource(collectionView: collectionView, jokes: jokes)
+        sut = FactsDataSource(collectionView: collectionView, delegate: delegate, jokes: jokes)
       }
 
       context("When instantiated") {
@@ -36,5 +37,11 @@ final class FactsDataSourceSpec: QuickSpec {
         }
       }
     }
+  }
+}
+
+fileprivate final class FakeCellDelegate: FactsCollectionViewCellDelegate {
+  func factsCollectionViewCellDidTapShare(joke: Joke) {
+
   }
 }

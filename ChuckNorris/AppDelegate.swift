@@ -37,16 +37,16 @@ extension AppDelegate: UIApplicationDelegate {
     applicationCoordinator.start()
 
     // TODO: REMOVE(MOCK)
-    var jokes: [Joke] = []
-    jokes.append(Joke(category: ["Film"], iconUrl: "", id: "", url: "", value: "kasjhdfka sjdfajsf jashdf ajhsdfk jahdsfkjads fjhads jfhas djfhas dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa sjdhfk ajshfk jahsdf jads jfhas jdfhak sjdhfk ajsdhf sdhf  dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks"))
-    jokes.append(Joke(category: ["Music"], iconUrl: "", id: "", url: "https://google.com", value: "asdfasdfasdfasdfasdf"))
-    jokes.append(Joke(category: ["Film"], iconUrl: "", id: "", url: "https://google.com", value: "kasjhdfka sjdfajsf jashdf ajhsdfk jahdsfkjads fjhads jfhas djfhas dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa sjdhfk ajshfk jahsdf jads jfhas jdfhak sjdhfk ajsdhf sdhf  dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa"))
-    jokes.append(Joke(category: nil, iconUrl: "", id: "", url: "https://google.com", value: "asdkfhaskdjfhaksjdfhaksjdfh asdfas"))
-    jokes.append(Joke(category: ["Music"], iconUrl: "", id: "", url: "https://google.com", value: "asdfasdfasdfasdfasdf asdfasdfasdfasdfasdf"))
-    jokes.append(Joke(category: ["Music"], iconUrl: "", id: "", url: "https://google.com", value: "AHdfas dfiuasdyfa9sdyf asdfasdfiasdiufa sdifuahsdf asdfasd"))
-
-    let database = Database()
-    database.save(object: jokes, forKey: Database.Keys.facts.rawValue)
+//    var jokes: [Joke] = []
+//    jokes.append(Joke(category: ["Film"], iconUrl: "", id: "", url: "", value: "kasjhdfka sjdfajsf jashdf ajhsdfk jahdsfkjads fjhads jfhas djfhas dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa sjdhfk ajshfk jahsdf jads jfhas jdfhak sjdhfk ajsdhf sdhf  dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks"))
+//    jokes.append(Joke(category: ["Music"], iconUrl: "", id: "", url: "https://google.com", value: "asdfasdfasdfasdfasdf"))
+//    jokes.append(Joke(category: ["Film"], iconUrl: "", id: "", url: "https://google.com", value: "kasjhdfka sjdfajsf jashdf ajhsdfk jahdsfkjads fjhads jfhas djfhas dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa sjdhfk ajshfk jahsdf jads jfhas jdfhak sjdhfk ajsdhf sdhf  dhfa jshdf jahsdfk ahsdk fjhak sjdhfak jshdfk ajhsfk jahdks jfhas jdfa"))
+//    jokes.append(Joke(category: nil, iconUrl: "", id: "", url: "https://google.com", value: "asdkfhaskdjfhaksjdfhaksjdfh asdfas"))
+//    jokes.append(Joke(category: ["Music"], iconUrl: "", id: "", url: "https://google.com", value: "asdfasdfasdfasdfasdf asdfasdfasdfasdfasdf"))
+//    jokes.append(Joke(category: ["Music"], iconUrl: "", id: "", url: "https://google.com", value: "AHdfas dfiuasdyfa9sdyf asdfasdfiasdiufa sdifuahsdf asdfasd"))
+//
+//    let database = Database()
+//    database.save(object: jokes, forKey: Database.Keys.facts.rawValue)
 
     return true
   }

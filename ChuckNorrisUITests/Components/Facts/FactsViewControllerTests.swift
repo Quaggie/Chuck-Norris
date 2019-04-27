@@ -13,12 +13,14 @@ final class FactsViewControllerTests: KIFTestCase {
   var navigationController: UINavigationController!
   var coordinator: FactsCoordinator!
   var service: ChuckNorrisWebserviceProtocol!
+  var database: DatabaseProtocol!
 
   override func beforeEach() {
     navigationController = UINavigationController()
     navigationController.navigationBar.isTranslucent = false
     UIApplication.shared.keyWindow?.rootViewController = navigationController
     service = ChuckNorrisWebservice()
+    database = MockDatabase()
     coordinator = FactsCoordinator(navigationController: navigationController, service: service)
     navigationController.viewControllers = [FactsViewController(coordinator: coordinator)]
   }
