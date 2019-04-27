@@ -76,6 +76,7 @@ final class FactsCollectionViewCell: UICollectionViewCell {
     button.setImage(#imageLiteral(resourceName: "icon_pdf").withRenderingMode(.alwaysTemplate), for: .normal)
     button.imageEdgeInsets = .init(top: 4, left: 4, bottom: 4, right: 4)
     button.addTarget(self, action: #selector(didTapShareButton), for: .touchUpInside)
+    button.accessibilityIdentifier = "factsCollectionViewCellShareButton"
     return button
   }()
 
