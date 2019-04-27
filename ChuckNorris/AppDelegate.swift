@@ -10,7 +10,7 @@ import UIKit
 
 @UIApplicationMain
 final class AppDelegate: UIResponder {
-  private var window: UIWindow?
+  internal var window: UIWindow?
   private var applicationCoordinator: ApplicationCoordinator?
 
   private func configuredWindow() -> UIWindow {

@@ -6,7 +6,7 @@
 //  Copyright © 2019 jonathanbijos. All rights reserved.
 //
 
-enum ApiError {
+enum ApiError: Error {
   case noInternet
   case serverError
   case decodingError
