@@ -34,6 +34,14 @@ final class FactsCollectionViewCell: UICollectionViewCell {
     return text.count > 80 ? UIFont.smallSystemFontSize : 28
   }
 
+  static func getCorrectCategory(from categories: [Category]?) -> String {
+    if let category = categories?.first {
+      return category.uppercased()
+    } else {
+      return "Uncategorized".uppercased()
+    }
+  }
+
   // MARK: - Properties -
   private var joke: Joke?
   private weak var delegate: FactsCollectionViewCellDelegate?
@@ -88,14 +96,7 @@ final class FactsCollectionViewCell: UICollectionViewCell {
     let fontSize = FactsCollectionViewCell.getFontSize(from: joke.value)
     label.font = UIFont.boldSystemFont(ofSize: fontSize)
     label.text = joke.value
-
-    let categoryLabelText: String
-    if let category = joke.category?.first {
-      categoryLabelText = category
-    } else {
-      categoryLabelText = "Uncategorized"
-    }
-    categoryCardLabel.text = categoryLabelText.uppercased()
+    categoryCardLabel.text = FactsCollectionViewCell.getCorrectCategory(from: joke.category)
     shareButton.isHidden = joke.url.isEmpty
   }
 }
