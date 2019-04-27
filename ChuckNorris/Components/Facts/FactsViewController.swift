@@ -13,6 +13,11 @@ final class FactsViewController: UIViewController {
   private let coordinator: FactsCoordinatorProtocol
   private let service: ChuckNorrisWebserviceProtocol
   private let database: DatabaseProtocol
+  private var state: FactsViewControllerViewState = .empty {
+    didSet {
+      screen.changeUI(for: state)
+    }
+  }
   private lazy var dataSource = FactsDataSource(collectionView: screen.collectionView, delegate: self, jokes: jokes)
   private var jokes: [Joke] = [] {
     didSet {
@@ -48,19 +53,26 @@ final class FactsViewController: UIViewController {
     super.viewDidLoad()
     setupCollectionView()
     setupOfflineData()
+    setupInitialState()
   }
+}
 
-  // MARK: - Setup -
-  private func setupCollectionView() {
+// MARK: - Setup -
+private extension FactsViewController {
+  func setupCollectionView() {
     screen.collectionView.delegate = self
     screen.collectionView.dataSource = dataSource
   }
 
-  private func setupOfflineData() {
+  func setupOfflineData() {
     let offlineJokes: [Joke]? = database.getObject(key: Database.Keys.facts.rawValue)
     if let offlineJokes = offlineJokes {
       jokes = offlineJokes
     }
+  }
+
+  func setupInitialState() {
+    state = .empty
   }
 }
 

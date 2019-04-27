@@ -16,6 +16,7 @@
 		6284B623D9D9F2A9CA7B5BAE /* Pods_ChuckNorris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EAD1F148666D24F5307B3F /* Pods_ChuckNorris.framework */; };
 		93D57EC7677FC7FFBBB54598 /* Pods_ChuckNorris_ChuckNorrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6057A582B106502BBC6191 /* Pods_ChuckNorris_ChuckNorrisTests.framework */; };
 		E00E4A012273C89500772588 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00E4A002273C89500772588 /* Database.swift */; };
+		E00E4A072273D9CB00772588 /* FactsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00E4A062273D9CB00772588 /* FactsEmptyView.swift */; };
 		E040CED5227260A300CD30D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CED4227260A300CD30D7 /* AppDelegate.swift */; };
 		E040CEDC227260A400CD30D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E040CEDB227260A400CD30D7 /* Assets.xcassets */; };
 		E040CEDF227260A400CD30D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E040CEDD227260A400CD30D7 /* LaunchScreen.storyboard */; };
@@ -81,6 +82,7 @@
 		C59EA81B7320D7E0D8308571 /* Pods-ChuckNorris-ChuckNorrisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorris-ChuckNorrisTests.release.xcconfig"; path = "Target Support Files/Pods-ChuckNorris-ChuckNorrisTests/Pods-ChuckNorris-ChuckNorrisTests.release.xcconfig"; sourceTree = "<group>"; };
 		D3EAD1F148666D24F5307B3F /* Pods_ChuckNorris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuckNorris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E00E4A002273C89500772588 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		E00E4A062273D9CB00772588 /* FactsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsEmptyView.swift; sourceTree = "<group>"; };
 		E040CED1227260A300CD30D7 /* ChuckNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E040CED4227260A300CD30D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E040CEDB227260A400CD30D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -221,6 +223,39 @@
 			path = Offline;
 			sourceTree = "<group>";
 		};
+		E00E4A022273D95800772588 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				E040CF1B22728BA400CD30D7 /* FactsDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		E00E4A032273D96200772588 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				E040CF1322727A6D00CD30D7 /* FactsViewControllerViewState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		E00E4A042273D96900772588 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E040CF1122727A2000CD30D7 /* FactsViewControllerScreen.swift */,
+				E00E4A062273D9CB00772588 /* FactsEmptyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E00E4A052273D97200772588 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E040CF17227288DC00CD30D7 /* FactsCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E040CEC8227260A300CD30D7 = {
 			isa = PBXGroup;
 			children = (
@@ -303,12 +338,12 @@
 		E040CF03227267BC00CD30D7 /* Facts */ = {
 			isa = PBXGroup;
 			children = (
+				E00E4A052273D97200772588 /* Cells */,
+				E00E4A042273D96900772588 /* Views */,
+				E00E4A032273D96200772588 /* State */,
+				E00E4A022273D95800772588 /* DataSources */,
 				E040CF04227267C600CD30D7 /* FactsCoordinator.swift */,
 				E040CEF42272658000CD30D7 /* FactsViewController.swift */,
-				E040CF1122727A2000CD30D7 /* FactsViewControllerScreen.swift */,
-				E040CF1322727A6D00CD30D7 /* FactsViewControllerViewState.swift */,
-				E040CF1B22728BA400CD30D7 /* FactsDataSource.swift */,
-				E040CF17227288DC00CD30D7 /* FactsCollectionViewCell.swift */,
 			);
 			path = Facts;
 			sourceTree = "<group>";
@@ -684,6 +719,7 @@
 				E040CF05227267C600CD30D7 /* FactsCoordinator.swift in Sources */,
 				E040CF2822729FBC00CD30D7 /* Response.swift in Sources */,
 				E040CF2422729ED000CD30D7 /* Request.swift in Sources */,
+				E00E4A072273D9CB00772588 /* FactsEmptyView.swift in Sources */,
 				E040CF1222727A2000CD30D7 /* FactsViewControllerScreen.swift in Sources */,
 				E040CF2D2272A44100CD30D7 /* Endpoints.swift in Sources */,
 				E040CF022272679800CD30D7 /* ApplicationCoordinator.swift in Sources */,

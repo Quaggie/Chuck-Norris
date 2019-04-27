@@ -24,7 +24,13 @@ final class FactsViewControllerScreen: UIView {
     collectionView.backgroundView?.backgroundColor = Color.white
     return collectionView
   }()
-
+  private let emptyView = FactsEmptyView()
+  private let activityIndicator: UIActivityIndicatorView = {
+    let ai = UIActivityIndicatorView(style: .white)
+    ai.hidesWhenStopped = true
+    ai.color = Color.black
+    return ai
+  }()
 
   // MARK: - Init -
   init() {
@@ -39,13 +45,17 @@ final class FactsViewControllerScreen: UIView {
   func changeUI(for state: FactsViewControllerViewState) {
     switch state {
     case .loading:
-      break
+      collectionView.isHidden = true
+      emptyView.isHidden = true
+      activityIndicator.startAnimating()
     case .finished:
-      break
+      collectionView.isHidden = false
+      emptyView.isHidden = true
+      activityIndicator.stopAnimating()
     case .empty:
-      break
-    case .error:
-      break
+      collectionView.isHidden = true
+      emptyView.isHidden = false
+      activityIndicator.stopAnimating()
     }
   }
 }
@@ -54,10 +64,20 @@ final class FactsViewControllerScreen: UIView {
 extension FactsViewControllerScreen: CodeView {
   func buildViewHierarchy() {
     addSubview(collectionView)
+    addSubview(emptyView)
+    addSubview(activityIndicator)
   }
 
   func setupConstraints() {
     collectionView.fillSuperview()
+
+    emptyView.anchor(leading: leadingAnchor,
+                     trailing: trailingAnchor,
+                     insets: .init(top: 0, left: 16, bottom: 0, right: 16))
+    emptyView.anchorCenterYToSuperview()
+    emptyView.anchor(height: FactsEmptyView.height)
+
+    activityIndicator.anchorCenterSuperview()
   }
 
   func setupAdditionalConfiguration() {

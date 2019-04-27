@@ -12,5 +12,4 @@ enum FactsViewControllerViewState: Equatable {
   case loading
   case finished
   case empty
-  case error(ApiError)
 }

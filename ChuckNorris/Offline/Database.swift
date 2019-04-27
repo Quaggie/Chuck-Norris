@@ -14,7 +14,9 @@ protocol DatabaseProtocol {
 }
 
 final class Database {
+  // MARK: - Keys -
   enum Keys: String {
+    case categories
     case facts
   }
   // MARK: - Properties -
