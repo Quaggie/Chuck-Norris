@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FactsCoordinatorProtocol: AnyObject {
-  func share(text: String)
+  func share(url: URL)
 }
 
 final class FactsCoordinator: Coordinator {
@@ -31,8 +31,8 @@ final class FactsCoordinator: Coordinator {
 }
 
 extension FactsCoordinator: FactsCoordinatorProtocol {
-  func share(text: String) {
-    let activityViewController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+  func share(url: URL) {
+    let activityViewController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
     activityViewController.popoverPresentationController?.sourceView = navigationController.presentingViewController?.view
     navigationController.present(activityViewController, animated: true)
   }

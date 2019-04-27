@@ -96,6 +96,7 @@ final class FactsCollectionViewCell: UICollectionViewCell {
       categoryLabelText = "Uncategorized"
     }
     categoryCardLabel.text = categoryLabelText.uppercased()
+    shareButton.isHidden = joke.url.isEmpty
   }
 }
 

@@ -21,6 +21,7 @@ final class FactsViewController: UIViewController {
   private lazy var dataSource = FactsDataSource(collectionView: screen.collectionView, delegate: self, jokes: jokes)
   private var jokes: [Joke] = [] {
     didSet {
+      state = jokes.isEmpty ? .empty : .finished
       dataSource = FactsDataSource(collectionView: screen.collectionView, delegate: self, jokes: jokes)
       screen.collectionView.dataSource = dataSource
     }
@@ -37,7 +38,6 @@ final class FactsViewController: UIViewController {
     self.service = service
     self.database = database
     super.init(nibName: nil, bundle: nil)
-    navigationItem.title = "Chuck Norris Facts"
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -51,17 +51,25 @@ final class FactsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupCollectionView()
-    setupOfflineData()
+    setupNavigationItem()
     setupInitialState()
+    setupOfflineData()
+    setupCollectionView()
   }
 }
 
 // MARK: - Setup -
 private extension FactsViewController {
-  func setupCollectionView() {
-    screen.collectionView.delegate = self
-    screen.collectionView.dataSource = dataSource
+  func setupNavigationItem() {
+    navigationItem.title = "Chuck Norris Facts"
+    let searchBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search,
+                                              target: self,
+                                              action: #selector(didTapSearch))
+    navigationItem.rightBarButtonItem = searchBarButtonItem
+  }
+
+  func setupInitialState() {
+    state = .empty
   }
 
   func setupOfflineData() {
@@ -71,8 +79,16 @@ private extension FactsViewController {
     }
   }
 
-  func setupInitialState() {
-    state = .empty
+  func setupCollectionView() {
+    screen.collectionView.delegate = self
+    screen.collectionView.dataSource = dataSource
+  }
+}
+
+// MARK: - Actions -
+private extension FactsViewController {
+  @objc func didTapSearch() {
+    print("Search pressed")
   }
 }
 
@@ -96,6 +112,8 @@ extension FactsViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - FactsCollectionViewCellDelegate -
 extension FactsViewController: FactsCollectionViewCellDelegate {
   func factsCollectionViewCellDidTapShare(joke: Joke) {
-    coordinator.share(text: joke.value)
+    if let url = URL(string: joke.url) {
+      coordinator.share(url: url)
+    }
   }
 }
