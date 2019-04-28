@@ -30,8 +30,8 @@ struct ChuckNorrisWebservice: ChuckNorrisWebserviceProtocol {
   }
 
   func getJokesBySearching(query: String, completion: @escaping Response<JokesSearchResponse>) {
-    let request = Request(url: Endpoints.jokes.random.value)
-    let params: Params = ["search": query]
+    let request = Request(url: Endpoints.jokes.search.value)
+    let params: Params = ["query": query]
 
     request.get(params: params) { (result: Result<JokesSearchResponse>) in
       switch result {

@@ -10,6 +10,7 @@ import UIKit
 
 protocol FactsCoordinatorProtocol: AnyObject {
   func share(url: URL)
+  func goToSearch()
 }
 
 final class FactsCoordinator: Coordinator {
@@ -34,5 +35,10 @@ extension FactsCoordinator: FactsCoordinatorProtocol {
     let activityViewController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
     activityViewController.popoverPresentationController?.sourceView = navigationController.presentingViewController?.view
     navigationController.present(activityViewController, animated: true)
+  }
+
+  func goToSearch() {
+    let searchCoordinator = SearchCoordinator(navigationController: navigationController)
+    searchCoordinator.start()
   }
 }

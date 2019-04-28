@@ -422,8 +422,8 @@
 				E00E4A042273D96900772588 /* Views */,
 				E00E4A032273D96200772588 /* State */,
 				E00E4A022273D95800772588 /* DataSources */,
-				E040CF04227267C600CD30D7 /* FactsCoordinator.swift */,
 				E040CEF42272658000CD30D7 /* FactsViewController.swift */,
+				E040CF04227267C600CD30D7 /* FactsCoordinator.swift */,
 			);
 			path = Facts;
 			sourceTree = "<group>";

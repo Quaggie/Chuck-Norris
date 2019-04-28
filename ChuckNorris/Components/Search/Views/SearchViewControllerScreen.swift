@@ -12,7 +12,7 @@ final class SearchViewControllerScreen: UIView {
   // MARK: - Properties -
   let margin: CGFloat = 8
 
-  // MARK: - Views -
+  // MARK: - Public views -
   lazy var collectionView: UICollectionView = {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .vertical
@@ -24,6 +24,12 @@ final class SearchViewControllerScreen: UIView {
     collectionView.backgroundView?.backgroundColor = Color.white
     return collectionView
   }()
+  let searchController: UISearchController = {
+    let sc = UISearchController(searchResultsController: nil)
+    sc.dimsBackgroundDuringPresentation = false
+    return sc
+  }()
+  // MARK: - Private views -
   private let emptyView = SearchEmptyView()
   // TODO: Error view here -> ()
   private let activityIndicator: UIActivityIndicatorView = {

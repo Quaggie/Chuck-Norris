@@ -43,5 +43,60 @@ final class SearchViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupNavigationItem()
+    setupInitialState()
+    setupSearchController()
+  }
+}
+
+// MARK: - Setup -
+private extension SearchViewController {
+  func setupNavigationItem() {
+    navigationItem.title = "Search facts"
+    navigationItem.searchController = screen.searchController
+    navigationItem.hidesSearchBarWhenScrolling = false
+  }
+
+  func setupInitialState() {
+    state = .initial
+  }
+
+  func setupSearchController() {
+    definesPresentationContext = true
+    screen.searchController.searchBar.delegate = self
+  }
+}
+
+// MARK: - Actions -
+private extension SearchViewController {
+  @objc func close() {
+    coordinator.cancelSearch()
+  }
+}
+
+// MARK: - API -
+private extension SearchViewController {
+  func getSearchRequest(text: String?) {
+    guard let text = text else {
+      return
+    }
+    state = .loading
+    service.getJokesBySearching(query: text) { [weak self] (result) in
+      guard let self = self else { return }
+      switch result {
+      case .success(let response):
+        self.database.save(object: response.result, forKey: Database.Keys.facts.rawValue)
+        self.state = .finished
+      case .error(let error):
+        self.state = .error(error)
+      }
+    }
+  }
+}
+
+// MARK: - UISearchBarDelegate -
+extension SearchViewController: UISearchBarDelegate {
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    getSearchRequest(text: searchBar.text)
   }
 }

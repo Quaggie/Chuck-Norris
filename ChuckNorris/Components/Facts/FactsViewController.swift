@@ -57,6 +57,9 @@ final class FactsViewController: UIViewController {
 // MARK: - Setup -
 private extension FactsViewController {
   func setupNavigationItem() {
+    navigationController?.navigationBar.prefersLargeTitles = true
+    navigationItem.largeTitleDisplayMode = .automatic
+    navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     navigationItem.title = "Chuck Norris Facts"
     let searchBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search,
                                               target: self,
@@ -84,7 +87,7 @@ private extension FactsViewController {
 // MARK: - Actions -
 private extension FactsViewController {
   @objc func didTapSearch() {
-    print("Search pressed")
+    coordinator.goToSearch()
   }
 }
 
