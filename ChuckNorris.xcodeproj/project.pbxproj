@@ -13,6 +13,8 @@
 		285D8BBA22733C8900756043 /* Joke+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D8BB922733C8900756043 /* Joke+Extension.swift */; };
 		285D8BBE22733E4E00756043 /* FactsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D8BBD22733E4E00756043 /* FactsViewControllerTests.swift */; };
 		285D8BC4227341CD00756043 /* KIF+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D8BC3227341CD00756043 /* KIF+Extension.swift */; };
+		2899BF642277845800878959 /* SearchSuggestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BF632277845800878959 /* SearchSuggestionCollectionViewCell.swift */; };
+		2899BF6722778AFE00878959 /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BF6622778AFE00878959 /* SearchDataSource.swift */; };
 		6284B623D9D9F2A9CA7B5BAE /* Pods_ChuckNorris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EAD1F148666D24F5307B3F /* Pods_ChuckNorris.framework */; };
 		93D57EC7677FC7FFBBB54598 /* Pods_ChuckNorris_ChuckNorrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6057A582B106502BBC6191 /* Pods_ChuckNorris_ChuckNorrisTests.framework */; };
 		E00E4A012273C89500772588 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00E4A002273C89500772588 /* Database.swift */; };
@@ -86,6 +88,8 @@
 		285D8BBD22733E4E00756043 /* FactsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewControllerTests.swift; sourceTree = "<group>"; };
 		285D8BBF22733F9300756043 /* ChuckNorrisUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChuckNorrisUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		285D8BC3227341CD00756043 /* KIF+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Extension.swift"; sourceTree = "<group>"; };
+		2899BF632277845800878959 /* SearchSuggestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionCollectionViewCell.swift; sourceTree = "<group>"; };
+		2899BF6622778AFE00878959 /* SearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
 		31EF5E124B4F4D814A540631 /* Pods-ChuckNorris-ChuckNorrisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorris-ChuckNorrisUITests.release.xcconfig"; path = "Target Support Files/Pods-ChuckNorris-ChuckNorrisUITests/Pods-ChuckNorris-ChuckNorrisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		446AC4BA44CEB26BB17B0336 /* Pods-ChuckNorris-ChuckNorrisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorris-ChuckNorrisUITests.debug.xcconfig"; path = "Target Support Files/Pods-ChuckNorris-ChuckNorrisUITests/Pods-ChuckNorris-ChuckNorrisUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C6057A582B106502BBC6191 /* Pods_ChuckNorris_ChuckNorrisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuckNorris_ChuckNorrisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +236,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2899BF62227783D000878959 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2899BF632277845800878959 /* SearchSuggestionCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2899BF6522778AEE00878959 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				2899BF6622778AFE00878959 /* SearchDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
 		428ABD97199B7778AB060E86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +322,8 @@
 		E00E4A172273EC1300772588 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				2899BF6522778AEE00878959 /* DataSources */,
+				2899BF62227783D000878959 /* Cells */,
 				E00E4A1F2273EDC700772588 /* Views */,
 				E00E4A1C2273ED0C00772588 /* State */,
 				E00E4A182273EC2A00772588 /* SearchViewController.swift */,
@@ -789,6 +811,7 @@
 				E00E4A012273C89500772588 /* Database.swift in Sources */,
 				E040CF1022726ECC00CD30D7 /* Color.swift in Sources */,
 				E040CF2222729CEA00CD30D7 /* JokesSearchResponse.swift in Sources */,
+				2899BF6722778AFE00878959 /* SearchDataSource.swift in Sources */,
 				E040CEF82272662400CD30D7 /* UIView+Extension.swift in Sources */,
 				E00E4A1E2273ED1600772588 /* SerachViewControllerViewState.swift in Sources */,
 				E040CF0D22726C5300CD30D7 /* CodeView.swift in Sources */,
@@ -797,6 +820,7 @@
 				E040CF1622727BA000CD30D7 /* ApiError.swift in Sources */,
 				E040CF1A2272894B00CD30D7 /* UILabel+Extension.swift in Sources */,
 				E040CED5227260A300CD30D7 /* AppDelegate.swift in Sources */,
+				2899BF642277845800878959 /* SearchSuggestionCollectionViewCell.swift in Sources */,
 				E040CF18227288DC00CD30D7 /* FactsCollectionViewCell.swift in Sources */,
 				E040CF2A22729FF000CD30D7 /* Result.swift in Sources */,
 				E00E4A232273EE4C00772588 /* SearchEmptyView.swift in Sources */,

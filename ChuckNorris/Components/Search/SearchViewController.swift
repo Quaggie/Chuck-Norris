@@ -18,6 +18,18 @@ final class SearchViewController: UIViewController {
       screen.changeUI(for: state)
     }
   }
+  private lazy var dataSource = SearchDataSource(collectionView: screen.collectionView,
+                                                 searchSuggestionDelegate: self,
+                                                 types: [])
+  private var types: [SearchDataSourceType] = [] {
+    didSet {
+      state = types.isEmpty ? .initial : .finished
+      dataSource = SearchDataSource(collectionView: screen.collectionView,
+                                    searchSuggestionDelegate: self,
+                                    types: types)
+      screen.collectionView.dataSource = dataSource
+    }
+  }
 
   // MARK: - Views -
   private let screen = SearchViewControllerScreen()
@@ -46,6 +58,7 @@ final class SearchViewController: UIViewController {
     setupNavigationItem()
     setupInitialState()
     setupSearchController()
+    setupCollectionView()
   }
 }
 
@@ -64,6 +77,13 @@ private extension SearchViewController {
   func setupSearchController() {
     definesPresentationContext = true
     screen.searchController.searchBar.delegate = self
+  }
+
+  func setupCollectionView() {
+    types = [.categories(["Music", "Movie"])]
+    screen.collectionView.delegate = self
+    screen.collectionView.dataSource = dataSource
+    screen.collectionView.reloadData()
   }
 }
 
@@ -94,9 +114,42 @@ private extension SearchViewController {
   }
 }
 
+// MARK: - UICollectionViewDelegate -
+extension SearchViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print("Item \(indexPath.section) selected")
+  }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout -
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                      sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let type = types[indexPath.section]
+    let width = collectionView.frame.width - (screen.margin * 2)
+
+    switch type {
+    case .sectionTitle:
+      return .zero
+    case .categories(let categories):
+      let category = categories[indexPath.item]
+      return SearchSuggestionCollectionViewCell.size(width: width, category: category)
+    case .pastSearches(let searches):
+      return .zero
+    }
+  }
+}
+
 // MARK: - UISearchBarDelegate -
 extension SearchViewController: UISearchBarDelegate {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     getSearchRequest(text: searchBar.text)
+  }
+}
+
+// MARK: - SearchSuggestionCollectionViewCellDelegate -
+extension SearchViewController: SearchSuggestionCollectionViewCellDelegate {
+  func searchSuggestionCollectionViewCellDidTapCategory(category: Category) {
+    print(category)
   }
 }
