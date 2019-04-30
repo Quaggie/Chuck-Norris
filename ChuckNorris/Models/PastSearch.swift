@@ -6,4 +6,19 @@
 //  Copyright © 2019 jonathanbijos. All rights reserved.
 //
 
-typealias PastSearch = String
+import Foundation
+
+final class PastSearch: Codable {
+  let text: String
+  var dateAdded = Date()
+
+  init(text: String) {
+    self.text = text
+  }
+}
+
+extension PastSearch: Equatable {
+  static func ==(lhs: PastSearch, rhs: PastSearch) -> Bool {
+    return lhs.text == rhs.text
+  }
+}

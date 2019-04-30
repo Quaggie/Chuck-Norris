@@ -56,16 +56,22 @@ final class SearchViewControllerScreen: UIView {
       collectionView.isHidden = false
       emptyView.isHidden = true
       activityIndicator.stopAnimating()
+      searchController.searchBar.isUserInteractionEnabled = true
     case .finished:
       collectionView.isHidden = false
       emptyView.isHidden = true
       activityIndicator.stopAnimating()
+      searchController.searchBar.isUserInteractionEnabled = true
     case .loading:
       collectionView.isHidden = true
       emptyView.isHidden = true
       activityIndicator.startAnimating()
+      searchController.searchBar.isUserInteractionEnabled = false
     case .error(let error):
-      print(error)
+      collectionView.isHidden = true
+      emptyView.isHidden = true
+      activityIndicator.stopAnimating()
+      searchController.searchBar.isUserInteractionEnabled = true
     }
   }
 }

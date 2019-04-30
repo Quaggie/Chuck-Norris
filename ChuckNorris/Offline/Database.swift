@@ -33,8 +33,38 @@ final class Database {
 extension Database: DatabaseProtocol {
   func save<T: Codable>(object: T, forKey key: Database.Keys) {
     let encoder = JSONEncoder()
-    if let encoded = try? encoder.encode(object) {
-      defaults.set(encoded, forKey: key.rawValue)
+
+    switch key {
+    case .categories, .facts:
+      if let encoded = try? encoder.encode(object) {
+        defaults.set(encoded, forKey: key.rawValue)
+      }
+    case .pastSearches:
+      guard let object = object as? PastSearch else {
+        return
+      }
+      // The user can only have 5 past searches
+      if var pastSearches: [PastSearch] = getObject(key: key) {
+        // Can't have repeated searches
+        if let repeatedObjectIndex = pastSearches.firstIndex(where: { $0 == object }) {
+          pastSearches.remove(at: repeatedObjectIndex)
+          // Put repeated string on top
+          object.dateAdded = Date()
+        }
+        if pastSearches.count >= 5 {
+          pastSearches.removeFirst()
+        }
+        pastSearches.append(object)
+        if let encodedPastSearches = try? encoder.encode(pastSearches) {
+          defaults.set(encodedPastSearches, forKey: key.rawValue)
+        }
+      } else {
+        // Creating a new array for past searches
+        let pastSearches: [PastSearch] = [object]
+        if let encoded = try? encoder.encode(pastSearches) {
+          defaults.set(encoded, forKey: key.rawValue)
+        }
+      }
     }
   }
 

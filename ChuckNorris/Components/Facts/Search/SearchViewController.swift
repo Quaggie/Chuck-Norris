@@ -22,8 +22,9 @@ final class SearchViewController: UIViewController {
     didSet {
       if state == .finished {
         delegate.searchViewControllerDidGetSearchFacts()
+      } else {
+        screen.changeUI(for: state)
       }
-      screen.changeUI(for: state)
     }
   }
   private lazy var dataSource = SearchDataSource(collectionView: screen.collectionView,
@@ -90,7 +91,7 @@ private extension SearchViewController {
   }
 
   func setupDataSourceTypes() {
-    guard let categories: [Category] = database.getObject(key: .categories) else {
+    guard let categories: [Category] = database.getObject(key: .categories), !categories.isEmpty else {
       getCategories()
       return
     }
@@ -98,8 +99,9 @@ private extension SearchViewController {
     let randomCategories = categories.getRandomElements(8)
     var searchDataSourceTypes: [SearchDataSourceType] = [.sectionTitle(.suggestions), .categories(randomCategories)]
 
-    if let pastSearches: [PastSearch] = database.getObject(key: .pastSearches) {
-      searchDataSourceTypes += [.sectionTitle(.pastSearches), .pastSearches(pastSearches)]
+    if let pastSearches: [PastSearch] = database.getObject(key: .pastSearches), !pastSearches.isEmpty {
+      let sortedPastSearches: [PastSearch] = pastSearches.sorted(by: { $0.dateAdded.compare($1.dateAdded) == .orderedDescending })
+      searchDataSourceTypes += [.sectionTitle(.pastSearches), .pastSearches(sortedPastSearches)]
     }
 
     types = searchDataSourceTypes
@@ -133,6 +135,7 @@ private extension SearchViewController {
       switch result {
       case .success(let response):
         self.database.save(object: response.result, forKey: .facts)
+        self.database.save(object: PastSearch(text: text), forKey: .pastSearches)
         self.state = .finished
       case .error(let error):
         self.state = .error(error)
@@ -144,7 +147,19 @@ private extension SearchViewController {
 // MARK: - UICollectionViewDelegate -
 extension SearchViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    print("Item \(indexPath.section) selected")
+    let type = types[indexPath.section]
+    switch type {
+    case .sectionTitle:
+      break
+    case .categories(let categories):
+      let category = categories[indexPath.item]
+      screen.searchController.searchBar.text = category
+      getSearchRequest(text: category)
+    case .pastSearches(let searches):
+      let pastSearch = searches[indexPath.item]
+      screen.searchController.searchBar.text = pastSearch.text
+      getSearchRequest(text: pastSearch.text)
+    }
   }
 }
 

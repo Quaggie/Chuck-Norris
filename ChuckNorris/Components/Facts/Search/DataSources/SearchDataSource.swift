@@ -70,8 +70,8 @@ extension SearchDataSource: UICollectionViewDataSource {
       return cell
     case .pastSearches(let searches):
       let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as SearchPastSearchCollectionViewCell
-      let text = searches[indexPath.item]
-      cell.setup(text: text)
+      let pastSearch = searches[indexPath.item]
+      cell.setup(text: pastSearch.text)
       return cell
     }
   }
