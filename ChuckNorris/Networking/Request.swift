@@ -85,6 +85,12 @@ struct Request {
     task({ obj in
       success(obj)
     }) { err in
+      // Don't retry if there is no internet connection
+      if err == .noInternet {
+        failure(ApiError.noInternet)
+        return
+      }
+
       debugPrint("Error retry left \(attempts)")
       if attempts > 0 {
         let deadline: Double = attempts >= 2 ? 4.0 : 8.0
