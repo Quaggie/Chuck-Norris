@@ -50,7 +50,11 @@ struct ChuckNorrisWebservice: ChuckNorrisWebserviceProtocol {
     request.get(params: params) { (result: Result<JokesSearchResponse>) in
       switch result {
       case .success(let response):
-        completion(.success(response))
+        if response.total == 0 {
+          completion(.error(.empty))
+        } else {
+          completion(.success(response))
+        }
       case .error(let err):
         completion(.error(err))
       }
