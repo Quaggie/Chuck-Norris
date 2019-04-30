@@ -61,6 +61,7 @@
 		E046C44D2277E09F00F2C241 /* DatabaseLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C44C2277E09F00F2C241 /* DatabaseLoadable.swift */; };
 		E046C44F2277E37400F2C241 /* PastSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C44E2277E37400F2C241 /* PastSearch.swift */; };
 		E046C4512277E6DB00F2C241 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C4502277E6DB00F2C241 /* Array+Extension.swift */; };
+		E046C453227872D200F2C241 /* SearchErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C452227872D200F2C241 /* SearchErrorView.swift */; };
 		FB9F66554ED62A79570FF118 /* Pods_ChuckNorris_ChuckNorrisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDFA52AF2EDB2A0173E846F /* Pods_ChuckNorris_ChuckNorrisUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +150,7 @@
 		E046C44C2277E09F00F2C241 /* DatabaseLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseLoadable.swift; sourceTree = "<group>"; };
 		E046C44E2277E37400F2C241 /* PastSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastSearch.swift; sourceTree = "<group>"; };
 		E046C4502277E6DB00F2C241 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		E046C452227872D200F2C241 /* SearchErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchErrorView.swift; sourceTree = "<group>"; };
 		E4E01A1B3E81280D78658267 /* Pods-ChuckNorris-ChuckNorrisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorris-ChuckNorrisTests.debug.xcconfig"; path = "Target Support Files/Pods-ChuckNorris-ChuckNorrisTests/Pods-ChuckNorris-ChuckNorrisTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -358,6 +360,7 @@
 				E046C4462277C0C900F2C241 /* LeftAlignedFlowLayout.swift */,
 				E00E4A202273EDD200772588 /* SearchViewControllerScreen.swift */,
 				E00E4A222273EE4C00772588 /* SearchEmptyView.swift */,
+				E046C452227872D200F2C241 /* SearchErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -839,6 +842,7 @@
 				E040CF1A2272894B00CD30D7 /* UILabel+Extension.swift in Sources */,
 				E040CED5227260A300CD30D7 /* AppDelegate.swift in Sources */,
 				2899BF642277845800878959 /* SearchSuggestionCollectionViewCell.swift in Sources */,
+				E046C453227872D200F2C241 /* SearchErrorView.swift in Sources */,
 				E040CF18227288DC00CD30D7 /* FactsCollectionViewCell.swift in Sources */,
 				E046C44D2277E09F00F2C241 /* DatabaseLoadable.swift in Sources */,
 				E040CF2A22729FF000CD30D7 /* Result.swift in Sources */,

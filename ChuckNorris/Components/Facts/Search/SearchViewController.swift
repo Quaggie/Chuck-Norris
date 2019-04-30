@@ -37,7 +37,7 @@ final class SearchViewController: UIViewController {
   }
 
   // MARK: - Views -
-  private let screen = SearchViewControllerScreen()
+  private lazy var screen = SearchViewControllerScreen(errorViewDelegate: self)
 
   // MARK: - Init -
   init(coordinator: FactsCoordinatorProtocol,
@@ -182,5 +182,12 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 extension SearchViewController: UISearchBarDelegate {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     getSearchRequest(text: searchBar.text)
+  }
+}
+
+// MARK: - SearchErrorViewDelegate -
+extension SearchViewController: SearchErrorViewDelegate {
+  func searchErrorViewDidTapButton() {
+    getSearchRequest(text: screen.searchController.searchBar.text)
   }
 }
