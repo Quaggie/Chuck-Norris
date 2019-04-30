@@ -40,6 +40,15 @@ final class SearchPastSearchCollectionViewCell: UICollectionViewCell {
     }
   }
 
+  // MARK: - Selection -
+  override var isSelected: Bool {
+    didSet {
+      if isSelected {
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+      }
+    }
+  }
+
   // MARK: - Public functions -
   func setup(text: String) {
     titleLabel.text = text

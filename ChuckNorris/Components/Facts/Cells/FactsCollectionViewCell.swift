@@ -108,6 +108,7 @@ private extension FactsCollectionViewCell {
     guard let joke = joke else {
       fatalError("Missing setup call")
     }
+    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
     delegate?.factsCollectionViewCellDidTapShare(joke: joke)
   }
 }
@@ -159,8 +160,8 @@ extension FactsCollectionViewCell: CodeView {
 
     applyShadow(color: .black,
                 offset: CGSize(width: 3, height: 2),
-                opacity: 0.09,
-                radius: 24)
+                opacity: 0.12,
+                radius: 20)
 
     contentView.accessibilityIdentifier = "factsCollectionViewCellContentView"
   }

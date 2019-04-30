@@ -53,6 +53,7 @@ final class SearchTitleCollectionViewCell: UICollectionViewCell {
   }
 }
 
+// MARK: - CodeView -
 extension SearchTitleCollectionViewCell: CodeView {
   func buildViewHierarchy() {
     contentView.addSubview(titleLabel)

@@ -10,13 +10,13 @@ import UIKit
 
 final class FactsViewControllerScreen: UIView {
   // MARK: - Properties -
-  let margin: CGFloat = 8
+  let margin: CGFloat = 16
 
   // MARK: - Views -
   lazy var collectionView: UICollectionView = {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .vertical
-    flowLayout.minimumLineSpacing = 8
+    flowLayout.minimumLineSpacing = 16
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
     collectionView.contentInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
     collectionView.accessibilityIdentifier = "factsViewControllerCollectionView"

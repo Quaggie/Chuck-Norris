@@ -66,11 +66,20 @@ final class SearchSuggestionCollectionViewCell: UICollectionViewCell {
   // MARK: - Highlight -
   override var isHighlighted: Bool {
     didSet {
-      UIView.animate(withDuration: 0.15, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: { [weak self] in
+      UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseInOut, animations: { [weak self] in
         guard let self = self else { return }
-        let scale: CGFloat = 0.95
+        let scale: CGFloat = 0.9
         self.transform = self.isHighlighted ? CGAffineTransform(scaleX: scale, y: scale) : .identity
       })
+    }
+  }
+
+  // MARK: - Selection -
+  override var isSelected: Bool {
+    didSet {
+      if isSelected {
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+      }
     }
   }
 
@@ -105,6 +114,6 @@ extension SearchSuggestionCollectionViewCell: CodeView {
   }
 
   func setupAdditionalConfiguration() {
-
+    contentView.accessibilityIdentifier = "searchSuggestionCollectionViewCellContentView"
   }
 }
