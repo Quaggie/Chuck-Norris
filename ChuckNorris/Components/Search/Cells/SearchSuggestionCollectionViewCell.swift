@@ -63,6 +63,17 @@ final class SearchSuggestionCollectionViewCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
 
+  // MARK: - Highlight -
+  override var isHighlighted: Bool {
+    didSet {
+      UIView.animate(withDuration: 0.15, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: { [weak self] in
+        guard let self = self else { return }
+        let scale: CGFloat = 0.95
+        self.transform = self.isHighlighted ? CGAffineTransform(scaleX: scale, y: scale) : .identity
+      })
+    }
+  }
+
   // MARK: - Public functions -
   func setup(category: Category) {
     cardLabel.text = category

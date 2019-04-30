@@ -33,12 +33,20 @@ final class SearchPastSearchCollectionViewCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
 
+  // MARK: - Highlight -
+  override var isHighlighted: Bool {
+    didSet {
+      contentView.alpha = isHighlighted ? 0.5 : 1
+    }
+  }
+
   // MARK: - Public functions -
   func setup(text: String) {
     titleLabel.text = text
   }
 }
 
+// MARK: - CodeView -
 extension SearchPastSearchCollectionViewCell: CodeView {
   func buildViewHierarchy() {
     contentView.addSubview(titleLabel)
