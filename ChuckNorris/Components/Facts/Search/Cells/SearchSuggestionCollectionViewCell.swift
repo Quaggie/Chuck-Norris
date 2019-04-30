@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol SearchSuggestionCollectionViewCellDelegate: AnyObject {
-  func searchSuggestionCollectionViewCellDidTapCategory(category: Category)
-}
-
 final class SearchSuggestionCollectionViewCell: UICollectionViewCell {
   // MARK: - Static public functions -
   static func size(width: CGFloat, category: Category) -> CGSize {

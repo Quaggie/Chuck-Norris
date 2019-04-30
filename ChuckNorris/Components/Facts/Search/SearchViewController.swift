@@ -27,14 +27,10 @@ final class SearchViewController: UIViewController {
       }
     }
   }
-  private lazy var dataSource = SearchDataSource(collectionView: screen.collectionView,
-                                                 searchSuggestionDelegate: self,
-                                                 types: [])
+  private lazy var dataSource = SearchDataSource(collectionView: screen.collectionView, types: [])
   private var types: [SearchDataSourceType] = [] {
     didSet {
-      dataSource = SearchDataSource(collectionView: screen.collectionView,
-                                    searchSuggestionDelegate: self,
-                                    types: types)
+      dataSource = SearchDataSource(collectionView: screen.collectionView, types: types)
       screen.collectionView.dataSource = dataSource
       screen.collectionView.reloadData()
     }
@@ -186,12 +182,5 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 extension SearchViewController: UISearchBarDelegate {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     getSearchRequest(text: searchBar.text)
-  }
-}
-
-// MARK: - SearchSuggestionCollectionViewCellDelegate -
-extension SearchViewController: SearchSuggestionCollectionViewCellDelegate {
-  func searchSuggestionCollectionViewCellDidTapCategory(category: Category) {
-    print(category)
   }
 }

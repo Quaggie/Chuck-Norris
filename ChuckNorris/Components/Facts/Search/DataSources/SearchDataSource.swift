@@ -17,13 +17,9 @@ enum SearchDataSourceType {
 final class SearchDataSource: NSObject {
   // MARK: - Properties -
   private let types: [SearchDataSourceType]
-  private unowned let searchSuggestionDelegate: SearchSuggestionCollectionViewCellDelegate
 
   // MARK: - Init -
-  init(collectionView: UICollectionView,
-       searchSuggestionDelegate: SearchSuggestionCollectionViewCellDelegate,
-       types: [SearchDataSourceType]) {
-    self.searchSuggestionDelegate = searchSuggestionDelegate
+  init(collectionView: UICollectionView, types: [SearchDataSourceType]) {
     self.types = types
     super.init()
     register(collectionView: collectionView)
