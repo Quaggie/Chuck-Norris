@@ -16,11 +16,14 @@ enum Endpoints {
 
   enum jokes: Endpoint {
     var endpoint: String { return "jokes" }
+    case categories
     case random
     case search
 
     var value: String {
       switch self {
+      case .categories:
+        return "\(Endpoints.baseUrl)/\(endpoint)/categories"
       case .random:
         return "\(Endpoints.baseUrl)/\(endpoint)/random"
       case .search:

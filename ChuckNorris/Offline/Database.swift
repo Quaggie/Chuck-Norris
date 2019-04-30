@@ -9,8 +9,8 @@
 import Foundation
 
 protocol DatabaseProtocol {
-  func save<T: Codable>(object: T, forKey key: String)
-  func getObject<T: Codable>(key: String) -> T?
+  func save<T: Codable>(object: T, forKey key: Database.Keys)
+  func getObject<T: Codable>(key: Database.Keys) -> T?
 }
 
 final class Database {
@@ -18,6 +18,7 @@ final class Database {
   enum Keys: String {
     case categories
     case facts
+    case pastSearches
   }
   // MARK: - Properties -
   private let defaults: UserDefaults
@@ -30,15 +31,15 @@ final class Database {
 
 // MARK: - DatabaseProtocol -
 extension Database: DatabaseProtocol {
-  func save<T: Codable>(object: T, forKey key: String) {
+  func save<T: Codable>(object: T, forKey key: Database.Keys) {
     let encoder = JSONEncoder()
     if let encoded = try? encoder.encode(object) {
-      defaults.set(encoded, forKey: key)
+      defaults.set(encoded, forKey: key.rawValue)
     }
   }
 
-  func getObject<T: Codable>(key: String) -> T? {
-    if let data = defaults.object(forKey: key) as? Data {
+  func getObject<T: Codable>(key: Database.Keys) -> T? {
+    if let data = defaults.object(forKey: key.rawValue) as? Data {
       let decoder = JSONDecoder()
       if let object = try? decoder.decode(T.self, from: data) {
         return object

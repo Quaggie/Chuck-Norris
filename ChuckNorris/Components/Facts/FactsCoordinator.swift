@@ -16,10 +16,12 @@ protocol FactsCoordinatorProtocol: AnyObject {
 final class FactsCoordinator: Coordinator {
   // MARK: - Views -
   private let navigationController: UINavigationController
+  private let service: ChuckNorrisWebserviceProtocol
 
   // MARK: - Init -
-  init(navigationController: UINavigationController) {
+  init(navigationController: UINavigationController, service: ChuckNorrisWebserviceProtocol = ChuckNorrisWebservice()) {
     self.navigationController = navigationController
+    self.service = service
   }
 
   // MARK: - Coordinator -
@@ -38,7 +40,15 @@ extension FactsCoordinator: FactsCoordinatorProtocol {
   }
 
   func goToSearch() {
-    let searchCoordinator = SearchCoordinator(navigationController: navigationController)
-    searchCoordinator.start()
+    let controller = SearchViewController(coordinator: self, delegate: self, service: service)
+    navigationController.pushViewController(controller, animated: true)
+  }
+}
+
+// MARK: - SearchViewControllerDelegate -
+extension FactsCoordinator: SearchViewControllerDelegate {
+  func searchViewControllerDidGetSearchFacts() {
+    navigationController.viewControllers.forEach({ ($0 as? DatabaseLoadable)?.reloadDatabase() })
+    navigationController.popViewController(animated: true)
   }
 }

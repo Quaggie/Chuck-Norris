@@ -11,7 +11,7 @@ import UIKit
 enum SearchDataSourceType {
   case sectionTitle(SearchTitleType)
   case categories([Category])
-  case pastSearches([String])
+  case pastSearches([PastSearch])
 }
 
 final class SearchDataSource: NSObject {

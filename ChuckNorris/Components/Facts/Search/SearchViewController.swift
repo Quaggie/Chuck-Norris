@@ -8,13 +8,21 @@
 
 import UIKit
 
+protocol SearchViewControllerDelegate: AnyObject {
+  func searchViewControllerDidGetSearchFacts()
+}
+
 final class SearchViewController: UIViewController {
   // MARK: - Properties -
-  private let coordinator: SearchCoordinatorProtocol
+  private let coordinator: FactsCoordinatorProtocol
+  private unowned let delegate: SearchViewControllerDelegate
   private let service: ChuckNorrisWebserviceProtocol
   private let database: DatabaseProtocol
   private var state: SearchViewControllerViewState = .initial {
     didSet {
+      if state == .finished {
+        delegate.searchViewControllerDidGetSearchFacts()
+      }
       screen.changeUI(for: state)
     }
   }
@@ -23,11 +31,11 @@ final class SearchViewController: UIViewController {
                                                  types: [])
   private var types: [SearchDataSourceType] = [] {
     didSet {
-      state = types.isEmpty ? .initial : .finished
       dataSource = SearchDataSource(collectionView: screen.collectionView,
                                     searchSuggestionDelegate: self,
                                     types: types)
       screen.collectionView.dataSource = dataSource
+      screen.collectionView.reloadData()
     }
   }
 
@@ -35,10 +43,12 @@ final class SearchViewController: UIViewController {
   private let screen = SearchViewControllerScreen()
 
   // MARK: - Init -
-  init(coordinator: SearchCoordinatorProtocol,
+  init(coordinator: FactsCoordinatorProtocol,
+       delegate: SearchViewControllerDelegate,
        service: ChuckNorrisWebserviceProtocol = ChuckNorrisWebservice(),
        database: DatabaseProtocol = Database()) {
     self.coordinator = coordinator
+    self.delegate = delegate
     self.service = service
     self.database = database
     super.init(nibName: nil, bundle: nil)
@@ -56,9 +66,9 @@ final class SearchViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupNavigationItem()
-    setupInitialState()
     setupSearchController()
     setupCollectionView()
+    setupDataSourceTypes()
   }
 }
 
@@ -70,35 +80,49 @@ private extension SearchViewController {
     navigationItem.hidesSearchBarWhenScrolling = false
   }
 
-  func setupInitialState() {
-    state = .initial
-  }
-
   func setupSearchController() {
     definesPresentationContext = true
     screen.searchController.searchBar.delegate = self
   }
 
   func setupCollectionView() {
-    types = [.sectionTitle(.suggestions),
-             .categories(["Games", "Sports", "Dev", "Science", "Technology", "Music", "Travel", "Carrer"]),
-             .sectionTitle(.pastSearches),
-             .pastSearches(["Star Wars", "Github", "Trump", "Dumb"])]
     screen.collectionView.delegate = self
-    screen.collectionView.dataSource = dataSource
-    screen.collectionView.reloadData()
   }
-}
 
-// MARK: - Actions -
-private extension SearchViewController {
-  @objc func close() {
-    coordinator.cancelSearch()
+  func setupDataSourceTypes() {
+    guard let categories: [Category] = database.getObject(key: .categories) else {
+      getCategories()
+      return
+    }
+
+    let randomCategories = categories.getRandomElements(8)
+    var searchDataSourceTypes: [SearchDataSourceType] = [.sectionTitle(.suggestions), .categories(randomCategories)]
+
+    if let pastSearches: [PastSearch] = database.getObject(key: .pastSearches) {
+      searchDataSourceTypes += [.sectionTitle(.pastSearches), .pastSearches(pastSearches)]
+    }
+
+    types = searchDataSourceTypes
+    state = .initial
   }
 }
 
 // MARK: - API -
 private extension SearchViewController {
+  func getCategories() {
+    state = .loading
+    service.getCategories { [weak self] (result) in
+      guard let self = self else { return }
+      switch result {
+      case .success(let response):
+        self.database.save(object: response, forKey: .categories)
+        self.setupDataSourceTypes()
+      case .error(let error):
+        self.state = .error(error)
+      }
+    }
+  }
+
   func getSearchRequest(text: String?) {
     guard let text = text else {
       return
@@ -108,7 +132,7 @@ private extension SearchViewController {
       guard let self = self else { return }
       switch result {
       case .success(let response):
-        self.database.save(object: response.result, forKey: Database.Keys.facts.rawValue)
+        self.database.save(object: response.result, forKey: .facts)
         self.state = .finished
       case .error(let error):
         self.state = .error(error)

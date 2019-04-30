@@ -23,6 +23,7 @@ final class FactsViewController: UIViewController {
       state = jokes.isEmpty ? .empty : .finished
       dataSource = FactsDataSource(collectionView: screen.collectionView, delegate: self, jokes: jokes)
       screen.collectionView.dataSource = dataSource
+      screen.collectionView.reloadData()
     }
   }
 
@@ -72,7 +73,7 @@ private extension FactsViewController {
   }
 
   func setupOfflineData() {
-    let offlineJokes: [Joke]? = database.getObject(key: Database.Keys.facts.rawValue)
+    let offlineJokes: [Joke]? = database.getObject(key: .facts)
     if let offlineJokes = offlineJokes {
       jokes = offlineJokes
     }
@@ -113,6 +114,15 @@ extension FactsViewController: FactsCollectionViewCellDelegate {
   func factsCollectionViewCellDidTapShare(joke: Joke) {
     if let url = URL(string: joke.url) {
       coordinator.share(url: url)
+    }
+  }
+}
+
+// MARK: - DatabaseLoadable -
+extension FactsViewController: DatabaseLoadable {
+  func reloadDatabase() {
+    if let databaseJokes: [Joke] = database.getObject(key: .facts) {
+      jokes = databaseJokes
     }
   }
 }
