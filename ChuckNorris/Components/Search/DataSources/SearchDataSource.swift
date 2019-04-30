@@ -9,7 +9,7 @@
 import UIKit
 
 enum SearchDataSourceType {
-  case sectionTitle
+  case sectionTitle(SearchTitleType)
   case categories([Category])
   case pastSearches([String])
 }
@@ -31,7 +31,9 @@ final class SearchDataSource: NSObject {
 
   // MARK: - Setup -
   private func register(collectionView: UICollectionView) {
+    collectionView.register(SearchTitleCollectionViewCell.self)
     collectionView.register(SearchSuggestionCollectionViewCell.self)
+    collectionView.register(SearchPastSearchCollectionViewCell.self)
   }
 }
 
@@ -57,15 +59,20 @@ extension SearchDataSource: UICollectionViewDataSource {
     let type = types[indexPath.section]
     
     switch type {
-    case .sectionTitle:
-      return UICollectionViewCell()
+    case .sectionTitle(let titleType):
+      let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as SearchTitleCollectionViewCell
+      cell.setup(type: titleType)
+      return cell
     case .categories(let categories):
       let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as SearchSuggestionCollectionViewCell
       let category = categories[indexPath.item]
       cell.setup(category: category)
       return cell
     case .pastSearches(let searches):
-      return UICollectionViewCell()
+      let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as SearchPastSearchCollectionViewCell
+      let text = searches[indexPath.item]
+      cell.setup(text: text)
+      return cell
     }
   }
 }

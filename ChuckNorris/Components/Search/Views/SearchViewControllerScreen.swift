@@ -10,15 +10,16 @@ import UIKit
 
 final class SearchViewControllerScreen: UIView {
   // MARK: - Properties -
-  let margin: CGFloat = 8
+  let margin: CGFloat = 16
 
   // MARK: - Public views -
   lazy var collectionView: UICollectionView = {
-    let flowLayout = UICollectionViewFlowLayout()
+    let flowLayout = LeftAlignedFlowLayout(minimumInteritemSpacing: 8,
+                                           minimumLineSpacing: 8,
+                                           sectionInset: .init(top: 16, left: 0, bottom: 0, right: 0))
     flowLayout.scrollDirection = .vertical
-    flowLayout.minimumLineSpacing = 8
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-    collectionView.contentInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
+    collectionView.contentInset = UIEdgeInsets(top: 0, left: margin, bottom: margin, right: margin)
     collectionView.accessibilityIdentifier = "searchViewControllerCollectionView"
     collectionView.backgroundColor = Color.white
     collectionView.backgroundView?.backgroundColor = Color.white

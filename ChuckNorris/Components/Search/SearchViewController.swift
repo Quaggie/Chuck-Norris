@@ -80,7 +80,10 @@ private extension SearchViewController {
   }
 
   func setupCollectionView() {
-    types = [.categories(["Music", "Movie"])]
+    types = [.sectionTitle(.suggestions),
+             .categories(["Games", "Sports", "Dev", "Science", "Technology", "Music", "Travel", "Carrer"]),
+             .sectionTitle(.pastSearches),
+             .pastSearches(["Star Wars", "Github", "Trump", "Dumb"])]
     screen.collectionView.delegate = self
     screen.collectionView.dataSource = dataSource
     screen.collectionView.reloadData()
@@ -130,12 +133,12 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 
     switch type {
     case .sectionTitle:
-      return .zero
+      return SearchTitleCollectionViewCell.size(width: width)
     case .categories(let categories):
       let category = categories[indexPath.item]
       return SearchSuggestionCollectionViewCell.size(width: width, category: category)
-    case .pastSearches(let searches):
-      return .zero
+    case .pastSearches:
+      return SearchPastSearchCollectionViewCell.size(width: width)
     }
   }
 }

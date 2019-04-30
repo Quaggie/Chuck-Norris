@@ -23,7 +23,13 @@ final class AppDelegate: UIResponder {
   private func configureNavigationBar() {
     let appearance = UINavigationBar.appearance()
     appearance.barTintColor = Color.black
+    appearance.largeTitleTextAttributes = [.foregroundColor: Color.white]
     appearance.titleTextAttributes = [.foregroundColor: Color.white]
+  }
+
+  private func configureSearchBar() {
+    let appearance = UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+    appearance.defaultTextAttributes = [.foregroundColor: Color.white]
   }
 }
 
@@ -31,6 +37,7 @@ extension AppDelegate: UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     configureNavigationBar()
+    configureSearchBar()
     let window = configuredWindow()
     let applicationCoordinator = ApplicationCoordinator(window: window)
     self.applicationCoordinator = applicationCoordinator
