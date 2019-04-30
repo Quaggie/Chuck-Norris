@@ -76,7 +76,24 @@ struct Request {
     }
     task.resume()
   }
+
+  // MARK: - Rertry -
+  func retry<T: Decodable>(_ attempts: Int = 2,
+                task: @escaping (_ success: @escaping (T) -> Void, _ failure: @escaping (ApiError) -> Void) -> Void,
+                success: @escaping (T) -> Void,
+                failure: @escaping (ApiError) -> Void) {
+    task({ obj in
+      success(obj)
+    }) { err in
+      debugPrint("Error retry left \(attempts)")
+      if attempts > 0 {
+        let deadline: Double = attempts >= 2 ? 4.0 : 8.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + deadline, execute: {
+          self.retry(attempts - 1, task: task, success: success, failure: failure)
+        })
+      } else {
+        failure(err)
+      }
+    }
+  }
 }
-
-
-
