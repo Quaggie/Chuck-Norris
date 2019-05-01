@@ -55,6 +55,10 @@ final class SearchViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
+  deinit {
+    debugPrint("Deinit SearchViewController")
+  }
+
   // MARK: - Lifecycle -
   override func loadView() {
     self.view = screen

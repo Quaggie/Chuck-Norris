@@ -36,6 +36,7 @@ final class SearchErrorView: UIView {
     label.font = UIFont.boldSystemFont(ofSize: 16)
     label.numberOfLines = 0
     label.lineBreakMode = .byWordWrapping
+    label.accessibilityIdentifier = "searchErrorViewTitleLabel"
     return label
   }()
   private lazy var button: UIButton = {
@@ -47,6 +48,7 @@ final class SearchErrorView: UIView {
     btn.layer.cornerRadius = 10.0
     btn.layer.borderWidth = 1.0
     btn.layer.borderColor = UIColor.black.cgColor
+    btn.accessibilityIdentifier = "searchErrorViewButton"
     return btn
   }()
 
@@ -97,6 +99,6 @@ extension SearchErrorView: CodeView {
   }
 
   func setupAdditionalConfiguration() {
-
+    accessibilityIdentifier = "searchErrorView"
   }
 }

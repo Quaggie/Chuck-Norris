@@ -8,21 +8,27 @@
 
 import Foundation
 
-struct Request {
+final class Request: WebserviceRequestProtocol {
+  // MARK: - Public properties -
+  var task: URLSessionTask?
+
+  // MARK: - Private properties -
   private let timeoutInterval: TimeInterval = 20
   private let cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy
-
-  private enum HTTPMethod: String {
-    case get = "GET"
-  }
-
   private let urlString: String
+  private let session = URLSession(configuration: URLSessionConfiguration.default)
 
+  // MARK: - Init -
   init(url: String) {
     urlString = url
   }
 
-  func get<T: Decodable>(params: Params? = nil, completion: @escaping Response<T>) {
+  deinit {
+    debugPrint("Deinit Request")
+  }
+
+  // MARK: - Public functions -
+  func get(params: Params? = nil, completion: @escaping Response) {
     var urlComponents = URLComponents(string: urlString)
     var items: [URLQueryItem] = []
     if let params = params {
@@ -42,16 +48,18 @@ struct Request {
     var urlRequest = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: timeoutInterval)
     urlRequest.httpMethod = HTTPMethod.get.rawValue
 
-    let session = URLSession(configuration: URLSessionConfiguration.default)
-    let task = session.dataTask(with: urlRequest) { data, response, error in
+    task = session.dataTask(with: urlRequest) { data, response, error in
       DispatchQueue.main.async {
         if let error = error as? URLError {
           switch error.code {
           case .notConnectedToInternet:
             completion(Result.error(ApiError.noInternet))
+          case .cancelled:
+            completion(Result.error(ApiError.cancelled))
           default:
             completion(Result.error(ApiError.serverError))
           }
+          return
         }
 
         guard let response = response as? HTTPURLResponse, let data = data else {
@@ -61,45 +69,16 @@ struct Request {
 
         switch response.statusCode {
         case 200...300:
-          let jsonDecoder = JSONDecoder()
-          jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-          do {
-            let model = try jsonDecoder.decode(T.self, from: data)
-            completion(Result.success(model))
-          } catch {
-            completion(Result.error(ApiError.decodingError))
-          }
+          completion(.success(data))
         default:
-          completion(Result.error(ApiError.invalidResponse))
+          completion(Result.error(ApiError.serverError))
         }
       }
     }
-    task.resume()
+    task?.resume()
   }
 
-  // MARK: - Rertry -
-  func retry<T: Decodable>(_ attempts: Int = 2,
-                task: @escaping (_ success: @escaping (T) -> Void, _ failure: @escaping (ApiError) -> Void) -> Void,
-                success: @escaping (T) -> Void,
-                failure: @escaping (ApiError) -> Void) {
-    task({ obj in
-      success(obj)
-    }) { err in
-      // Don't retry if there is no internet connection
-      if err == .noInternet {
-        failure(ApiError.noInternet)
-        return
-      }
-
-      debugPrint("Error retry left \(attempts)")
-      if attempts > 0 {
-        let deadline: Double = attempts >= 2 ? 4.0 : 8.0
-        DispatchQueue.main.asyncAfter(deadline: .now() + deadline, execute: {
-          self.retry(attempts - 1, task: task, success: success, failure: failure)
-        })
-      } else {
-        failure(err)
-      }
-    }
+  func cancel() {
+    task?.cancel()
   }
 }

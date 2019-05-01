@@ -40,7 +40,7 @@ extension FactsCoordinator: FactsCoordinatorProtocol {
   }
 
   func goToSearch() {
-    let controller = SearchViewController(coordinator: self, delegate: self, service: service)
+    let controller = SearchViewController(coordinator: self, delegate: self)
     navigationController.pushViewController(controller, animated: true)
   }
 }

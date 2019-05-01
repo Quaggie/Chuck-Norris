@@ -6,4 +6,5 @@
 //  Copyright © 2019 jonathanbijos. All rights reserved.
 //
 
-typealias Response<T: Decodable> = (Result<T>) -> ()
+import Foundation
+typealias Response = (Result<Data>) -> Void

@@ -13,6 +13,7 @@ enum ApiError: Error {
   case invalidResponse
   case invalidEndpoint
   case empty
+  case cancelled
 
   var message: String {
     switch self {
@@ -26,6 +27,8 @@ enum ApiError: Error {
       return "Unable to connect to the server"
     case .empty:
       return "No results found for the current search.\n\nTry searching for something else :)"
+    case .cancelled:
+      return ""
     }
   }
 }

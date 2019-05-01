@@ -58,13 +58,7 @@ final class SearchViewControllerScreen: UIView {
 
   func changeUI(for state: SearchViewControllerViewState) {
     switch state {
-    case .initial:
-      collectionView.isHidden = false
-      emptyView.isHidden = true
-      activityIndicator.stopAnimating()
-      searchController.searchBar.isUserInteractionEnabled = true
-      errorView.isHidden = true
-    case .finished:
+    case .initial, .finished:
       collectionView.isHidden = false
       emptyView.isHidden = true
       activityIndicator.stopAnimating()
