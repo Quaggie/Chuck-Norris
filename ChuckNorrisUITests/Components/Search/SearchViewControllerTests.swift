@@ -11,9 +11,17 @@ import XCTest
 
 final class SearchViewControllerTests: KIFTestCase {
   var navigationController: UINavigationController!
-  var coordinator: SearchCoordinatorProtocol!
+  var coordinator: FactsCoordinatorProtocol!
   var service: ChuckNorrisWebserviceProtocol!
+  var delegate: SearchViewControllerDelegate!
   var database: DatabaseProtocol!
+
+  private final class Delegate: SearchViewControllerDelegate {
+    var delegateCalled = false
+    func searchViewControllerDidGetSearchFacts() {
+      delegateCalled = true
+    }
+  }
 
   override func beforeEach() {
     navigationController = UINavigationController()
@@ -21,22 +29,104 @@ final class SearchViewControllerTests: KIFTestCase {
     database = FakeDatabase()
   }
 
-  private func createCoordinator(responseType: FakeChuckNorrisWebserviceResponseType) {
+  private func setupController(responseType: FakeChuckNorrisWebserviceResponseType) {
     service = FakeChuckNorrisWebservice(responseType: responseType)
-    coordinator = SearchCoordinator(navigationController: navigationController)
+    coordinator = FactsCoordinator(navigationController: navigationController)
+    delegate = Delegate()
     let controller = SearchViewController(coordinator: coordinator,
-                                         service: service,
-                                         database: database)
+                                          delegate: delegate,
+                                          service: service,
+                                          database: database)
     navigationController.viewControllers = [controller]
   }
 
   func testSuccess() {
-    createCoordinator(responseType: .success)
-    tester.waitForView(withAccessibilityIdentifier: "searchViewControllerCollectionView")
+    setupController(responseType: .success)
+    tester.waitForView(withAccessibilityIdentifier: "searchViewControllerScreenCollectionView")
   }
 
   func testLoading() {
-    createCoordinator(responseType: .loading)
-    tester.waitForView(withAccessibilityIdentifier: "searchEmptyView")
+    setupController(responseType: .loading)
+    tester.waitForView(withAccessibilityIdentifier: "searchViewControllerScreenActivityIndicator")
+  }
+
+  func testServerError() {
+    setupController(responseType: .error(ApiError.serverError))
+    tester.waitForView(withAccessibilityIdentifier: "searchErrorView")
+    let titleLabel = tester.waitForView(withAccessibilityIdentifier: "searchErrorViewTitleLabel") as! UILabel
+    XCTAssertTrue(titleLabel.text == ApiError.serverError.message)
+  }
+
+  func testInvalidResponse() {
+    setupController(responseType: .error(ApiError.invalidResponse))
+    tester.waitForView(withAccessibilityIdentifier: "searchErrorView")
+    let titleLabel = tester.waitForView(withAccessibilityIdentifier: "searchErrorViewTitleLabel") as! UILabel
+    XCTAssertTrue(titleLabel.text == ApiError.invalidResponse.message)
+  }
+
+  func testEmpty() {
+    setupController(responseType: .error(ApiError.empty))
+    tester.waitForView(withAccessibilityIdentifier: "searchErrorView")
+    let titleLabel = tester.waitForView(withAccessibilityIdentifier: "searchErrorViewTitleLabel") as! UILabel
+    XCTAssertTrue(titleLabel.text == ApiError.empty.message)
+  }
+
+  func testDecodingError() {
+    setupController(responseType: .error(ApiError.decodingError))
+    tester.waitForView(withAccessibilityIdentifier: "searchErrorView")
+    let titleLabel = tester.waitForView(withAccessibilityIdentifier: "searchErrorViewTitleLabel") as! UILabel
+    XCTAssertTrue(titleLabel.text == ApiError.decodingError.message)
+  }
+
+  func testNoInternet() {
+    setupController(responseType: .error(ApiError.noInternet))
+    tester.waitForView(withAccessibilityIdentifier: "searchErrorView")
+    let titleLabel = tester.waitForView(withAccessibilityIdentifier: "searchErrorViewTitleLabel") as! UILabel
+    XCTAssertTrue(titleLabel.text == ApiError.noInternet.message)
+  }
+
+  func testInvalidEndpoint() {
+    setupController(responseType: .error(ApiError.invalidEndpoint))
+    tester.waitForView(withAccessibilityIdentifier: "searchErrorView")
+    let titleLabel = tester.waitForView(withAccessibilityIdentifier: "searchErrorViewTitleLabel") as! UILabel
+    XCTAssertTrue(titleLabel.text == ApiError.invalidEndpoint.message)
+  }
+
+  func testCategoriesLayout() {
+    // Add jokes to defaults
+    let categories = ChuckNorris.Category.mockCategories(total: 8)
+    database.save(object: categories, forKey: Database.Keys.categories)
+    // Setup controller with previously saved database
+    setupController(responseType: .success)
+    tester.waitForView(withAccessibilityIdentifier: "searchSuggestionCollectionViewCellContentView")
+  }
+
+  func testCategoriesTap() {
+    // Add jokes to defaults
+    let categories = ChuckNorris.Category.mockCategories(total: 8)
+    database.save(object: categories, forKey: Database.Keys.categories)
+    // Setup controller with previously saved database
+    setupController(responseType: .success)
+    tester.tapView(withAccessibilityIdentifier: "searchSuggestionCollectionViewCellContentView")
+    tester.waitForView(withAccessibilityIdentifier: "searchViewControllerScreenActivityIndicator")
+  }
+
+  func testPastSearchesLayout() {
+    // Add jokes to defaults
+    let pastSearches = PastSearch.mockPastSearches(total: 5)
+    database.save(object: pastSearches, forKey: Database.Keys.pastSearches)
+    // Setup controller with previously saved database
+    setupController(responseType: .success)
+    tester.waitForView(withAccessibilityIdentifier: "searchPastSearchCollectionViewCellLabel")
+  }
+
+  func testPastSearchesTap() {
+    // Add jokes to defaults
+    let pastSearches = PastSearch.mockPastSearches(total: 1)
+    database.save(object: pastSearches, forKey: Database.Keys.pastSearches)
+    // Setup controller with previously saved database
+    setupController(responseType: .success)
+    tester.tapView(withAccessibilityIdentifier: "searchPastSearchCollectionViewCellContentView")
+    tester.waitForView(withAccessibilityIdentifier: "searchViewControllerScreenActivityIndicator")
   }
 }

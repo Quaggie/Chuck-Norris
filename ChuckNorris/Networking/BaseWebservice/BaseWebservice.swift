@@ -58,8 +58,8 @@ final class BaseWebservice: Webservice {
     task({ obj in
       success(obj)
     }) { err in
-      // Don't retry if there is no internet connection or cancelled request
-      if err == .noInternet || err == .cancelled {
+      // Don't retry
+      if err == .noInternet || err == .cancelled || err == .empty {
         failure(err)
         return
       }

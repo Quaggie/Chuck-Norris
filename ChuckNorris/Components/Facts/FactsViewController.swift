@@ -116,6 +116,8 @@ extension FactsViewController: DatabaseLoadable {
   func reloadDatabase() {
     if let databaseJokes: [Joke] = database.getObject(key: .facts) {
       jokes = databaseJokes
+      let indexPath = IndexPath(item: 0, section: 0)
+      screen.collectionView.scrollToItem(at: indexPath, at: .top, animated: false)
     }
   }
 }

@@ -68,6 +68,7 @@ final class SearchErrorView: UIView {
 extension SearchErrorView {
   func setup(error: ApiError) {
     titleLabel.text = error.message
+    button.isHidden = error == .empty
   }
 }
 

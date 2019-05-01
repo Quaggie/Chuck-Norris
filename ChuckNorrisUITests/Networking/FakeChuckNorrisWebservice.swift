@@ -21,12 +21,12 @@ final class FakeChuckNorrisWebservice: ChuckNorrisWebserviceProtocol {
     self.responseType = responseType
   }
 
-  func getRandomJoke(category: String?, completion: @escaping (Result<Joke>) -> ()) {
+  func getCategories(completion: @escaping (Result<[ChuckNorris.Category]>) -> Void) {
     switch responseType {
     case .loading:
       break
     case .success:
-      completion(.success(Joke.mockJoke()))
+      completion(.success(ChuckNorris.Category.mockCategories(total: 10)))
     case .error(let error):
       completion(.error(error))
     }

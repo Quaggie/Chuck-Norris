@@ -43,7 +43,7 @@ final class FactsViewControllerTests: KIFTestCase {
   func testFinished() {
     // Add jokes to defaults
     let jokes = Joke.mockJokes(total: 2)
-    database.save(object: jokes, forKey: Database.Keys.facts.rawValue)
+    database.save(object: jokes, forKey: Database.Keys.facts)
     // Setup controller with previously saved database
     setupController()
     // Look for collectionView
@@ -53,7 +53,7 @@ final class FactsViewControllerTests: KIFTestCase {
   func testShare() {
     // Add jokes to defaults
     let jokes = Joke.mockJokes(total: 1)
-    database.save(object: jokes, forKey: Database.Keys.facts.rawValue)
+    database.save(object: jokes, forKey: Database.Keys.facts)
     // Setup controller with previously saved database
     setupController()
     tester.tapView(withAccessibilityIdentifier: "factsCollectionViewCellShareButton")
