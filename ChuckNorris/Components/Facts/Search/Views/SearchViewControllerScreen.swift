@@ -32,6 +32,7 @@ final class SearchViewControllerScreen: UIView {
   let searchController: UISearchController = {
     let sc = UISearchController(searchResultsController: nil)
     sc.dimsBackgroundDuringPresentation = false
+    sc.searchBar.accessibilityIdentifier = "searchViewControllerScreenSearchBar"
     return sc
   }()
   // MARK: - Private views -

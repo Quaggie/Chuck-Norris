@@ -93,7 +93,7 @@ final class SearchViewControllerTests: KIFTestCase {
   }
 
   func testCategoriesLayout() {
-    // Add jokes to defaults
+    // Add categories to defaults
     let categories = ChuckNorris.Category.mockCategories(total: 8)
     database.save(object: categories, forKey: Database.Keys.categories)
     // Setup controller with previously saved database
@@ -102,17 +102,19 @@ final class SearchViewControllerTests: KIFTestCase {
   }
 
   func testCategoriesTap() {
-    // Add jokes to defaults
+    // Add categories to defaults
     let categories = ChuckNorris.Category.mockCategories(total: 8)
     database.save(object: categories, forKey: Database.Keys.categories)
     // Setup controller with previously saved database
     setupController(responseType: .success)
     tester.tapView(withAccessibilityIdentifier: "searchSuggestionCollectionViewCellContentView")
     tester.waitForView(withAccessibilityIdentifier: "searchViewControllerScreenActivityIndicator")
+    let dlg = delegate as! Delegate
+    XCTAssertTrue(dlg.delegateCalled)
   }
 
   func testPastSearchesLayout() {
-    // Add jokes to defaults
+    // Add pastSearches to defaults
     let pastSearches = PastSearch.mockPastSearches(total: 5)
     database.save(object: pastSearches, forKey: Database.Keys.pastSearches)
     // Setup controller with previously saved database
@@ -121,12 +123,25 @@ final class SearchViewControllerTests: KIFTestCase {
   }
 
   func testPastSearchesTap() {
-    // Add jokes to defaults
+    // Add pastSearches to defaults
     let pastSearches = PastSearch.mockPastSearches(total: 1)
     database.save(object: pastSearches, forKey: Database.Keys.pastSearches)
     // Setup controller with previously saved database
     setupController(responseType: .success)
     tester.tapView(withAccessibilityIdentifier: "searchPastSearchCollectionViewCellContentView")
     tester.waitForView(withAccessibilityIdentifier: "searchViewControllerScreenActivityIndicator")
+    let dlg = delegate as! Delegate
+    XCTAssertTrue(dlg.delegateCalled)
+  }
+
+  func testSearchbarEnter() {
+    setupController(responseType: .success)
+    // Enter text into searchbar
+    tester.enterText("Chuck", intoViewWithAccessibilityIdentifier: "searchViewControllerScreenSearchBar")
+    // Tap search on the keyboard
+    tester.tapView(withAccessibilityLabel: "Search")
+    tester.waitForView(withAccessibilityIdentifier: "searchViewControllerScreenActivityIndicator")
+    let dlg = delegate as! Delegate
+    XCTAssertTrue(dlg.delegateCalled)
   }
 }
