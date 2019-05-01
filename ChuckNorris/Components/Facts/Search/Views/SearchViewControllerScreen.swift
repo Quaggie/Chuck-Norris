@@ -63,28 +63,24 @@ final class SearchViewControllerScreen: UIView {
       emptyView.isHidden = true
       activityIndicator.stopAnimating()
       searchController.searchBar.isUserInteractionEnabled = true
-      searchController.searchBar.isHidden = false
       errorView.isHidden = true
     case .finished:
       collectionView.isHidden = false
       emptyView.isHidden = true
       activityIndicator.stopAnimating()
       searchController.searchBar.isUserInteractionEnabled = true
-      searchController.searchBar.isHidden = false
       errorView.isHidden = true
     case .loading:
       collectionView.isHidden = true
       emptyView.isHidden = true
       activityIndicator.startAnimating()
       searchController.searchBar.isUserInteractionEnabled = false
-      searchController.searchBar.isHidden = false
       errorView.isHidden = true
     case .error(let error):
       collectionView.isHidden = true
       emptyView.isHidden = true
       activityIndicator.stopAnimating()
       searchController.searchBar.isUserInteractionEnabled = true
-      searchController.searchBar.isHidden = true
       errorView.isHidden = false
       errorView.setup(error: error)
       errorViewHeightAnchor?.constant = SearchErrorView.height(error: error, width: frame.width - (margin * 2))
