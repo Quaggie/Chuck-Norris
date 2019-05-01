@@ -75,13 +75,13 @@ private extension FactsViewController {
   func setupOfflineData() {
     let offlineJokes: [Joke]? = database.getObject(key: .facts)
     if let offlineJokes = offlineJokes {
-      jokes = offlineJokes
+      let last10Jokes = offlineJokes.getRandomElements(10)
+      jokes = last10Jokes
     }
   }
 
   func setupCollectionView() {
     screen.collectionView.delegate = self
-    screen.collectionView.dataSource = dataSource
   }
 }
 
@@ -92,20 +92,13 @@ private extension FactsViewController {
   }
 }
 
-// MARK: - UICollectionViewDelegate -
-extension FactsViewController: UICollectionViewDelegate {
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    print("Item \(indexPath.item) selected")
-  }
-}
-
 // MARK: - UICollectionViewDelegateFlowLayout -
 extension FactsViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
     let joke = jokes[indexPath.item]
-    return FactsCollectionViewCell.size(width: collectionView.frame.width - (screen.margin * 2),
-                                        text: joke.value)
+    let width = collectionView.frame.width - (screen.margin * 2)
+    return FactsCollectionViewCell.size(width: width, text: joke.value)
   }
 }
 
