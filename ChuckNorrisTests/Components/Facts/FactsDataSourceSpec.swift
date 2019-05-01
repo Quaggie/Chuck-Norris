@@ -30,7 +30,7 @@ final class FactsDataSourceSpec: QuickSpec {
           expect(items).to(equal(2))
         }
 
-        it("should return the correctly number of initial and final portion") {
+        it("should be a cell type of FactsCollectionViewCell") {
           let firstIndexPath = IndexPath(item: 0, section: 0)
           let cell = sut.collectionView(collectionView, cellForItemAt: firstIndexPath)
           expect(cell).to(beAKindOf(FactsCollectionViewCell.self))

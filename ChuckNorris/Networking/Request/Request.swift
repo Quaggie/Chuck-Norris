@@ -29,6 +29,11 @@ final class Request: WebserviceRequestProtocol {
 
   // MARK: - Public functions -
   func get(params: Params? = nil, completion: @escaping Response) {
+    guard !urlString.isEmpty else {
+      completion(Result.error(ApiError.invalidEndpoint))
+      return
+    }
+    
     var urlComponents = URLComponents(string: urlString)
     var items: [URLQueryItem] = []
     if let params = params {
