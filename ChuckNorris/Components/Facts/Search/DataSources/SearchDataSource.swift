@@ -62,12 +62,12 @@ extension SearchDataSource: UICollectionViewDataSource {
     case .categories(let categories):
       let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as SearchSuggestionCollectionViewCell
       let category = categories[indexPath.item]
-      cell.setup(category: category)
+      cell.setup(category: category, index: indexPath.item)
       return cell
     case .pastSearches(let searches):
       let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as SearchPastSearchCollectionViewCell
       let pastSearch = searches[indexPath.item]
-      cell.setup(text: pastSearch.text)
+      cell.setup(text: pastSearch.text, index: indexPath.item)
       return cell
     }
   }

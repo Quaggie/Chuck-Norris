@@ -8,36 +8,45 @@
 
 @testable import ChuckNorris
 
-enum FakeChuckNorrisWebserviceResponseType {
+enum FakeChuckNorrisWebserviceCategoryResponseType {
+  case loading
+  case success
+  case error(ApiError)
+}
+
+enum FakeChuckNorrisWebserviceSearchResponseType {
   case loading
   case success
   case error(ApiError)
 }
 
 final class FakeChuckNorrisWebservice: ChuckNorrisWebserviceProtocol {
-  private let responseType: FakeChuckNorrisWebserviceResponseType
+  private let categoryResponseType: FakeChuckNorrisWebserviceCategoryResponseType
+  private let searchResponseType: FakeChuckNorrisWebserviceSearchResponseType
 
-  init(responseType: FakeChuckNorrisWebserviceResponseType) {
-    self.responseType = responseType
+  init(categoryResponseType: FakeChuckNorrisWebserviceCategoryResponseType,
+       searchResponseType: FakeChuckNorrisWebserviceSearchResponseType) {
+    self.categoryResponseType = categoryResponseType
+    self.searchResponseType = searchResponseType
   }
 
   func getCategories(completion: @escaping (Result<[ChuckNorris.Category]>) -> Void) {
-    switch responseType {
+    switch categoryResponseType {
     case .loading:
       break
     case .success:
-      completion(.success(ChuckNorris.Category.mockCategories(total: 10)))
+      completion(.success(ChuckNorris.Category.mockCategories(total: 15)))
     case .error(let error):
       completion(.error(error))
     }
   }
 
   func getJokesBySearching(query: String, completion: @escaping (Result<JokesSearchResponse>) -> ()) {
-    switch responseType {
+    switch searchResponseType {
     case .loading:
       break
     case .success:
-      completion(.success(JokesSearchResponse.mock(totalJokes: 5)))
+      completion(.success(JokesSearchResponse.mock(totalJokes: 15)))
     case .error(let error):
       completion(.error(error))
     }

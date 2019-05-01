@@ -100,7 +100,8 @@ private extension SearchViewController {
     var searchDataSourceTypes: [SearchDataSourceType] = [.sectionTitle(.suggestions), .categories(randomCategories)]
 
     if let pastSearches: [PastSearch] = database.getObject(key: .pastSearches), !pastSearches.isEmpty {
-      let sortedPastSearches: [PastSearch] = pastSearches.sorted(by: { $0.dateAdded.compare($1.dateAdded) == .orderedDescending })
+      let last5PastSearches = pastSearches.prefix(5)
+      let sortedPastSearches: [PastSearch] = last5PastSearches.sorted(by: { $0.dateAdded.compare($1.dateAdded) == .orderedDescending })
       searchDataSourceTypes += [.sectionTitle(.pastSearches), .pastSearches(sortedPastSearches)]
     }
 

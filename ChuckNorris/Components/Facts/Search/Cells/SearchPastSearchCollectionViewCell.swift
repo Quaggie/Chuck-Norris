@@ -50,8 +50,10 @@ final class SearchPastSearchCollectionViewCell: UICollectionViewCell {
   }
 
   // MARK: - Public functions -
-  func setup(text: String) {
+  func setup(text: String, index: Int) {
     titleLabel.text = text
+    titleLabel.accessibilityIdentifier = "searchPastSearchCollectionViewCellLabel\(index)"
+    contentView.accessibilityIdentifier = "searchPastSearchCollectionViewCellContentView\(index)"
   }
 }
 
@@ -69,6 +71,6 @@ extension SearchPastSearchCollectionViewCell: CodeView {
   }
 
   func setupAdditionalConfiguration() {
-    contentView.accessibilityIdentifier = "searchPastSearchCollectionViewCellContentView"
+
   }
 }

@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		285D8BAB2273360300756043 /* ChuckNorrisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D8BAA2273360300756043 /* ChuckNorrisUITests.swift */; };
 		285D8BB5227338ED00756043 /* FactsDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D8BB4227338ED00756043 /* FactsDataSourceSpec.swift */; };
 		285D8BB722733C5100756043 /* FactsCollectionViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D8BB622733C5100756043 /* FactsCollectionViewCellSpec.swift */; };
-		285D8BBA22733C8900756043 /* Joke+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D8BB922733C8900756043 /* Joke+Extension.swift */; };
 		285D8BBE22733E4E00756043 /* FactsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D8BBD22733E4E00756043 /* FactsViewControllerTests.swift */; };
 		285D8BC4227341CD00756043 /* KIF+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D8BC3227341CD00756043 /* KIF+Extension.swift */; };
 		2899BF642277845800878959 /* SearchSuggestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BF632277845800878959 /* SearchSuggestionCollectionViewCell.swift */; };
@@ -28,7 +26,7 @@
 		E00E4A1E2273ED1600772588 /* SerachViewControllerViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00E4A1D2273ED1600772588 /* SerachViewControllerViewState.swift */; };
 		E00E4A212273EDD200772588 /* SearchViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00E4A202273EDD200772588 /* SearchViewControllerScreen.swift */; };
 		E00E4A232273EE4C00772588 /* SearchEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00E4A222273EE4C00772588 /* SearchEmptyView.swift */; };
-		E00E4A262273EF6900772588 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00E4A252273EF6900772588 /* SearchViewControllerTests.swift */; };
+		E00E4A262273EF6900772588 /* SearchViewControllerFunctionalityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00E4A252273EF6900772588 /* SearchViewControllerFunctionalityTests.swift */; };
 		E040CED5227260A300CD30D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040CED4227260A300CD30D7 /* AppDelegate.swift */; };
 		E040CEDC227260A400CD30D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E040CEDB227260A400CD30D7 /* Assets.xcassets */; };
 		E040CEDF227260A400CD30D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E040CEDD227260A400CD30D7 /* LaunchScreen.storyboard */; };
@@ -70,6 +68,9 @@
 		E046C464227A0AAE00F2C241 /* WebserviceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C463227A0AAE00F2C241 /* WebserviceSpec.swift */; };
 		E046C466227A239200F2C241 /* ChuckNorrisWebserviceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C465227A239200F2C241 /* ChuckNorrisWebserviceSpec.swift */; };
 		E046C469227A240000F2C241 /* SearchDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C468227A240000F2C241 /* SearchDataSourceSpec.swift */; };
+		E046C47A227A2E0A00F2C241 /* Joke+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C476227A2E0900F2C241 /* Joke+Extension.swift */; };
+		E046C47E227A335400F2C241 /* SearchViewControllerLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C47D227A335400F2C241 /* SearchViewControllerLogicTests.swift */; };
+		E046C481227A41D100F2C241 /* DatabaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C480227A41D100F2C241 /* DatabaseSpec.swift */; };
 		FB9F66554ED62A79570FF118 /* Pods_ChuckNorris_ChuckNorrisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDFA52AF2EDB2A0173E846F /* Pods_ChuckNorris_ChuckNorrisUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,11 +95,9 @@
 		15635DC83A65C4D316AA655F /* Pods-ChuckNorris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorris.release.xcconfig"; path = "Target Support Files/Pods-ChuckNorris/Pods-ChuckNorris.release.xcconfig"; sourceTree = "<group>"; };
 		1723844506B7F406EBA017F4 /* Pods-ChuckNorris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorris.debug.xcconfig"; path = "Target Support Files/Pods-ChuckNorris/Pods-ChuckNorris.debug.xcconfig"; sourceTree = "<group>"; };
 		285D8BA82273360300756043 /* ChuckNorrisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChuckNorrisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		285D8BAA2273360300756043 /* ChuckNorrisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisUITests.swift; sourceTree = "<group>"; };
 		285D8BAC2273360300756043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		285D8BB4227338ED00756043 /* FactsDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsDataSourceSpec.swift; sourceTree = "<group>"; };
 		285D8BB622733C5100756043 /* FactsCollectionViewCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsCollectionViewCellSpec.swift; sourceTree = "<group>"; };
-		285D8BB922733C8900756043 /* Joke+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Joke+Extension.swift"; sourceTree = "<group>"; };
 		285D8BBD22733E4E00756043 /* FactsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewControllerTests.swift; sourceTree = "<group>"; };
 		285D8BBF22733F9300756043 /* ChuckNorrisUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChuckNorrisUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		285D8BC3227341CD00756043 /* KIF+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Extension.swift"; sourceTree = "<group>"; };
@@ -121,7 +120,7 @@
 		E00E4A1D2273ED1600772588 /* SerachViewControllerViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachViewControllerViewState.swift; sourceTree = "<group>"; };
 		E00E4A202273EDD200772588 /* SearchViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerScreen.swift; sourceTree = "<group>"; };
 		E00E4A222273EE4C00772588 /* SearchEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEmptyView.swift; sourceTree = "<group>"; };
-		E00E4A252273EF6900772588 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
+		E00E4A252273EF6900772588 /* SearchViewControllerFunctionalityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerFunctionalityTests.swift; sourceTree = "<group>"; };
 		E040CED1227260A300CD30D7 /* ChuckNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E040CED4227260A300CD30D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E040CEDB227260A400CD30D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +166,9 @@
 		E046C463227A0AAE00F2C241 /* WebserviceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebserviceSpec.swift; sourceTree = "<group>"; };
 		E046C465227A239200F2C241 /* ChuckNorrisWebserviceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisWebserviceSpec.swift; sourceTree = "<group>"; };
 		E046C468227A240000F2C241 /* SearchDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataSourceSpec.swift; sourceTree = "<group>"; };
+		E046C476227A2E0900F2C241 /* Joke+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Joke+Extension.swift"; sourceTree = "<group>"; };
+		E046C47D227A335400F2C241 /* SearchViewControllerLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerLogicTests.swift; sourceTree = "<group>"; };
+		E046C480227A41D100F2C241 /* DatabaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSpec.swift; sourceTree = "<group>"; };
 		E4E01A1B3E81280D78658267 /* Pods-ChuckNorris-ChuckNorrisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorris-ChuckNorrisTests.debug.xcconfig"; path = "Target Support Files/Pods-ChuckNorris-ChuckNorrisTests/Pods-ChuckNorris-ChuckNorrisTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,7 +207,6 @@
 				285D8BC2227341C100756043 /* Extensions */,
 				285D8BBB22733E3400756043 /* Components */,
 				E00E4A0B2273E22500772588 /* Offline */,
-				285D8BAA2273360300756043 /* ChuckNorrisUITests.swift */,
 				285D8BAC2273360300756043 /* Info.plist */,
 				285D8BBF22733F9300756043 /* ChuckNorrisUITests-Bridging-Header.h */,
 			);
@@ -233,7 +234,7 @@
 		285D8BB822733C7800756043 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				285D8BB922733C8900756043 /* Joke+Extension.swift */,
+				E046C476227A2E0900F2C241 /* Joke+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,7 +388,8 @@
 		E00E4A242273EF5C00772588 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				E00E4A252273EF6900772588 /* SearchViewControllerTests.swift */,
+				E00E4A252273EF6900772588 /* SearchViewControllerFunctionalityTests.swift */,
+				E046C47D227A335400F2C241 /* SearchViewControllerLogicTests.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -438,6 +440,7 @@
 			children = (
 				285D8BB2227338D200756043 /* Components */,
 				285D8BB822733C7800756043 /* Extensions */,
+				E046C47F227A41BF00F2C241 /* Offline */,
 				E046C462227A0A9B00F2C241 /* Network */,
 				E040CEEB227260A500CD30D7 /* Info.plist */,
 			);
@@ -602,6 +605,14 @@
 				E046C468227A240000F2C241 /* SearchDataSourceSpec.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		E046C47F227A41BF00F2C241 /* Offline */ = {
+			isa = PBXGroup;
+			children = (
+				E046C480227A41D100F2C241 /* DatabaseSpec.swift */,
+			);
+			path = Offline;
 			sourceTree = "<group>";
 		};
 		E110CFF8643097C0FB83B5FF /* Pods */ = {
@@ -873,12 +884,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E00E4A0D2273E24300772588 /* FakeDatabase.swift in Sources */,
+				E046C47E227A335400F2C241 /* SearchViewControllerLogicTests.swift in Sources */,
 				285D8BBE22733E4E00756043 /* FactsViewControllerTests.swift in Sources */,
 				E046C45F2279F9ED00F2C241 /* Category+Extension.swift in Sources */,
-				E00E4A262273EF6900772588 /* SearchViewControllerTests.swift in Sources */,
+				E00E4A262273EF6900772588 /* SearchViewControllerFunctionalityTests.swift in Sources */,
 				285D8BC4227341CD00756043 /* KIF+Extension.swift in Sources */,
 				E00E4A142273E9E600772588 /* FakeChuckNorrisWebservice.swift in Sources */,
-				285D8BAB2273360300756043 /* ChuckNorrisUITests.swift in Sources */,
 				E046C4612279FFAC00F2C241 /* PastSearch+Extension.swift in Sources */,
 				E00E4A0F2273E2F800772588 /* Joke+Extension.swift in Sources */,
 				E00E4A162273EA8B00772588 /* JokesSearchResponse+Extension.swift in Sources */,
@@ -939,8 +950,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				285D8BBA22733C8900756043 /* Joke+Extension.swift in Sources */,
 				E046C469227A240000F2C241 /* SearchDataSourceSpec.swift in Sources */,
+				E046C47A227A2E0A00F2C241 /* Joke+Extension.swift in Sources */,
+				E046C481227A41D100F2C241 /* DatabaseSpec.swift in Sources */,
 				E046C464227A0AAE00F2C241 /* WebserviceSpec.swift in Sources */,
 				285D8BB5227338ED00756043 /* FactsDataSourceSpec.swift in Sources */,
 				E046C466227A239200F2C241 /* ChuckNorrisWebserviceSpec.swift in Sources */,

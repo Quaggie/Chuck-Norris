@@ -80,8 +80,9 @@ final class SearchSuggestionCollectionViewCell: UICollectionViewCell {
   }
 
   // MARK: - Public functions -
-  func setup(category: Category) {
+  func setup(category: Category, index: Int) {
     cardLabel.text = category
+    contentView.accessibilityIdentifier = "searchSuggestionCollectionViewCellContentView\(index)"
   }
 }
 
@@ -110,6 +111,6 @@ extension SearchSuggestionCollectionViewCell: CodeView {
   }
 
   func setupAdditionalConfiguration() {
-    contentView.accessibilityIdentifier = "searchSuggestionCollectionViewCellContentView"
+
   }
 }
