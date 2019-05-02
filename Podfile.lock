@@ -1,0 +1,42 @@
+PODS:
+  - KIF (3.7.6):
+    - KIF/Core (= 3.7.6)
+  - KIF/Core (3.7.6)
+  - KIF/IdentifierTests (3.7.6):
+    - KIF/Core
+  - Mockingjay (2.0.1):
+    - Mockingjay/Core (= 2.0.1)
+    - Mockingjay/XCTest (= 2.0.1)
+  - Mockingjay/Core (2.0.1):
+    - URITemplate (~> 2.0)
+  - Mockingjay/XCTest (2.0.1):
+    - Mockingjay/Core
+  - Nimble (8.0.1)
+  - Quick (2.1.0)
+  - URITemplate (2.0.3)
+
+DEPENDENCIES:
+  - KIF
+  - KIF/IdentifierTests
+  - Mockingjay
+  - Nimble
+  - Quick
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - KIF
+    - Mockingjay
+    - Nimble
+    - Quick
+    - URITemplate
+
+SPEC CHECKSUMS:
+  KIF: ae73fd36b1c860588841cb27e7f6efc4477122e2
+  Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
+
+PODFILE CHECKSUM: dc9acd62d9e0d72bef36c553ed043896648500f3
+
+COCOAPODS: 1.6.1
