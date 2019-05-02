@@ -1,0 +1,2554 @@
+<!DOCTYPE html>
+<!--
+xcov - Xcode code coverage without hassle
+A tool developed by Carlos Vidal @carlostify
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>xcov - Code coverage report</title>
+  <link rel="stylesheet" media="screen" href="resources/bootstrap.min.css" />
+  <link rel="stylesheet" media="screen" href="resources/opensans.css" />
+  <link rel="stylesheet" media="all" href="resources/main.css" />
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script src="resources/jquery.min.js"></script>
+  <script src="resources/bootstrap.min.js"></script>
+  <script src="resources/main.js"></script>
+</head>
+<body>
+  <!-- NavBar template starts here -->
+  <nav class="navbar navbar-fixed-top navbar-inverse" style=" border-bottom-width: 0px;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8 text-left">
+          <img class="logo" src="resources/xcov_logo.png"/>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- NavBar template ends here -->
+  <!-- Body template starts here -->
+  <div class="container-fluid container-body">
+    <!-- Coverage resume starts here -->
+    <div class="row coverage-summary">
+        <div class="col-md-12 text-center">
+          <div class="summary-counter">
+            91.79%
+          </div>
+          <div class="summary-description" style="color: #1FCB32;">
+            Overall coverage is good
+          </div>
+        </div>
+    </div>
+    <!-- Coverage resume ends here -->
+        <!-- Target details start here -->
+    <div class="row target-details" target-id="58888f791c77593e6e1940cc0e546d5b28db583a">
+      <!-- Target name -->
+      <div class="col-xs-9 col-md-offset-1 col-md-8 col-lg-offset-2 col-lg-6 target-name">
+        ChuckNorris.app
+      </div>
+      <div class="col-xs-3 col-md-2 col-lg-2 text-right target-percentage">
+        91.79% <span><div class="circle" style="background-color: #1FCB32;"></div></span>
+      </div>
+    </div>
+    <!-- Target files -->
+    <div class="files-wrapper" id="58888f791c77593e6e1940cc0e546d5b28db583a" style="display: none;">
+    <div class="row target-files">
+      <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="a663acc59626a50fb774cce9e79c7a220510dc8c">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            UIView+Extension.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            78.22% <span><div class="circle-sm" style="background-color: #FCFF00;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="a663acc59626a50fb774cce9e79c7a220510dc8c" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):__C.UIView.fillSuperview() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):__C.UIView.anchor(top: Swift.Optional&lt;__C.NSLayoutYAxisAnchor&gt;, leading: Swift.Optional&lt;__C.NSLayoutXAxisAnchor&gt;, bottom: Swift.Optional&lt;__C.NSLayoutYAxisAnchor&gt;, trailing: Swift.Optional&lt;__C.NSLayoutXAxisAnchor&gt;, insets: __C.UIEdgeInsets) -&gt; Swift.Array&lt;__C.NSLayoutConstraint&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):__C.UIView.anchor(height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;__C.NSLayoutConstraint&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):__C.UIView.anchor(heightAnchor: Swift.Optional&lt;__C.NSLayoutDimension&gt;, heightMultiplier: CoreGraphics.CGFloat, widthAnchor: Swift.Optional&lt;__C.NSLayoutDimension&gt;, widthMultiplier: CoreGraphics.CGFloat) -&gt; (Swift.Optional&lt;__C.NSLayoutConstraint&gt;, Swift.Optional&lt;__C.NSLayoutConstraint&gt;)
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):__C.UIView.anchorCenterXToSuperview(constant: CoreGraphics.CGFloat) -&gt; Swift.Optional&lt;__C.NSLayoutConstraint&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            81.82% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):__C.UIView.anchorCenterYToSuperview(constant: CoreGraphics.CGFloat) -&gt; Swift.Optional&lt;__C.NSLayoutConstraint&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            81.82% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):__C.UIView.anchorCenterSuperview() -&gt; (Swift.Optional&lt;__C.NSLayoutConstraint&gt;, Swift.Optional&lt;__C.NSLayoutConstraint&gt;)
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):__C.UIView.applyShadow(color: __C.UIColor, offset: __C.CGSize, opacity: Swift.Float, radius: CoreGraphics.CGFloat) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="6bd3e4df688d75fc62de9ba880abdf6e4ec66bb2">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            FactsCoordinator.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            80.00% <span><div class="circle-sm" style="background-color: #FCFF00;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="6bd3e4df688d75fc62de9ba880abdf6e4ec66bb2" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsCoordinator.start() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsCoordinator.share(url: Foundation.URL) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsCoordinator.goToSearch() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsCoordinator.searchViewControllerDidGetSearchFacts() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="5c3e4467efe83b13e79bd99f1f66338c20fccd3f">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            FactsViewController.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            80.28% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="5c3e4467efe83b13e79bd99f1f66338c20fccd3f" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewController.(state in _CB5B001D5E6151A50932B196DEA4265D).didset : ChuckNorris.FactsViewControllerViewState
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewController.(jokes in _CB5B001D5E6151A50932B196DEA4265D).didset : Swift.Array&lt;ChuckNorris.Joke&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            62.50% <span><div class="circle-sm" style="background-color: #FF9C00;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.FactsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChuckNorris.FactsViewController&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewController.loadView() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewController.viewDidLoad() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewController.(setupNavigationItem in _CB5B001D5E6151A50932B196DEA4265D)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewController.(setupInitialState in _CB5B001D5E6151A50932B196DEA4265D)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewController.(setupOfflineData in _CB5B001D5E6151A50932B196DEA4265D)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewController.(setupCollectionView in _CB5B001D5E6151A50932B196DEA4265D)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewController.(didTapSearch in _CB5B001D5E6151A50932B196DEA4265D)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewController.collectionView(_: __C.UICollectionView, layout: __C.UICollectionViewLayout, sizeForItemAt: Foundation.IndexPath) -&gt; __C.CGSize
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewController.factsCollectionViewCellDidTapShare(joke: ChuckNorris.Joke) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewController.reloadDatabase() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="c66d542cf1b9e5ff6662cb8611d8b9dae1a35fd6">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            UICollectionView+Extension.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            81.82% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="c66d542cf1b9e5ff6662cb8611d8b9dae1a35fd6" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):__C.UICollectionView.register&lt;A where A: __C.UICollectionViewCell&gt;(A.Type) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):__C.UICollectionView.dequeueReusableCell&lt;A where A: __C.UICollectionViewCell&gt;(forIndexPath: Foundation.IndexPath) -&gt; A
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            85.71% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in (extension in ChuckNorris):__C.UICollectionView.dequeueReusableCell&lt;A where A: __C.UICollectionViewCell&gt;(forIndexPath: Foundation.IndexPath) -&gt; A
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="21d1c9db8d615af93ff806b0592fbfe5ff5cfcac">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            LeftAlignedFlowLayout.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            88.89% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="21d1c9db8d615af93ff806b0592fbfe5ff5cfcac" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            72.73% <span><div class="circle-sm" style="background-color: #FCFF00;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.LeftAlignedFlowLayout.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChuckNorris.LeftAlignedFlowLayout&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.LeftAlignedFlowLayout.layoutAttributesForElements(in: __C.CGRect) -&gt; Swift.Optional&lt;Swift.Array&lt;__C.UICollectionViewLayoutAttributes&gt;&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 (__C.UICollectionViewLayoutAttributes) -&gt; __C.UICollectionViewLayoutAttributes in ChuckNorris.LeftAlignedFlowLayout.layoutAttributesForElements(in: __C.CGRect) -&gt; Swift.Optional&lt;Swift.Array&lt;__C.UICollectionViewLayoutAttributes&gt;&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #2 (__C.UICollectionViewLayoutAttributes) -&gt; Swift.Bool in ChuckNorris.LeftAlignedFlowLayout.layoutAttributesForElements(in: __C.CGRect) -&gt; Swift.Optional&lt;Swift.Array&lt;__C.UICollectionViewLayoutAttributes&gt;&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #3 (__C.UICollectionViewLayoutAttributes) -&gt; CoreGraphics.CGFloat in ChuckNorris.LeftAlignedFlowLayout.layoutAttributesForElements(in: __C.CGRect) -&gt; Swift.Optional&lt;Swift.Array&lt;__C.UICollectionViewLayoutAttributes&gt;&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="5a35eebde3a30c37a38c9264da7adf131e47fbed">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            SearchErrorView.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            89.55% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="5a35eebde3a30c37a38c9264da7adf131e47fbed" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            static ChuckNorris.SearchErrorView.height(error: ChuckNorris.ApiError, width: CoreGraphics.CGFloat) -&gt; CoreGraphics.CGFloat
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UILabel in variable initialization expression of ChuckNorris.SearchErrorView.(titleLabel in _E7FCD1F0AD4C42E5B4BE8FFDDEFE4BA4) : __C.UILabel
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UIButton in ChuckNorris.SearchErrorView.(button in _E7FCD1F0AD4C42E5B4BE8FFDDEFE4BA4).getter : __C.UIButton
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            62.50% <span><div class="circle-sm" style="background-color: #FF9C00;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.SearchErrorView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChuckNorris.SearchErrorView&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchErrorView.setup(error: ChuckNorris.ApiError) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchErrorView.(didTapBtn in _E7FCD1F0AD4C42E5B4BE8FFDDEFE4BA4)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchErrorView.buildViewHierarchy() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchErrorView.setupConstraints() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchErrorView.setupAdditionalConfiguration() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="64b58c16ad829bb8a53c40b93148897fd45f18a2">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            ChuckNorrisWebservice.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            89.62% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="64b58c16ad829bb8a53c40b93148897fd45f18a2" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.ChuckNorrisWebservice.__deallocating_deinit
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.ChuckNorrisWebservice.getCategories(completion: (ChuckNorris.Result&lt;Swift.Array&lt;Swift.String&gt;&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 (ChuckNorris.Result&lt;Foundation.Data&gt;) -&gt; () in closure #1 ((Swift.Array&lt;Swift.String&gt;) -&gt; (), (ChuckNorris.ApiError) -&gt; ()) -&gt; () in ChuckNorris.ChuckNorrisWebservice.getCategories(completion: (ChuckNorris.Result&lt;Swift.Array&lt;Swift.String&gt;&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            86.67% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #2 (Swift.Array&lt;Swift.String&gt;) -&gt; () in ChuckNorris.ChuckNorrisWebservice.getCategories(completion: (ChuckNorris.Result&lt;Swift.Array&lt;Swift.String&gt;&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #3 (ChuckNorris.ApiError) -&gt; () in ChuckNorris.ChuckNorrisWebservice.getCategories(completion: (ChuckNorris.Result&lt;Swift.Array&lt;Swift.String&gt;&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.ChuckNorrisWebservice.getJokesBySearching(query: Swift.String, completion: (ChuckNorris.Result&lt;ChuckNorris.JokesSearchResponse&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 (ChuckNorris.Result&lt;Foundation.Data&gt;) -&gt; () in closure #1 ((ChuckNorris.JokesSearchResponse) -&gt; (), (ChuckNorris.ApiError) -&gt; ()) -&gt; () in ChuckNorris.ChuckNorrisWebservice.getJokesBySearching(query: Swift.String, completion: (ChuckNorris.Result&lt;ChuckNorris.JokesSearchResponse&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            84.21% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #2 (ChuckNorris.JokesSearchResponse) -&gt; () in ChuckNorris.ChuckNorrisWebservice.getJokesBySearching(query: Swift.String, completion: (ChuckNorris.Result&lt;ChuckNorris.JokesSearchResponse&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #3 (ChuckNorris.ApiError) -&gt; () in ChuckNorris.ChuckNorrisWebservice.getJokesBySearching(query: Swift.String, completion: (ChuckNorris.Result&lt;ChuckNorris.JokesSearchResponse&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="fc6eb15ce75385602683ce82bfa5327f8ce2db4a">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            SearchEmptyView.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            90.24% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="fc6eb15ce75385602683ce82bfa5327f8ce2db4a" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UIImageView in variable initialization expression of ChuckNorris.SearchEmptyView.(imgView in _2884B0C5B8BE798398DF8230ADA11B67) : __C.UIImageView
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UILabel in variable initialization expression of ChuckNorris.SearchEmptyView.(titleLabel in _2884B0C5B8BE798398DF8230ADA11B67) : __C.UILabel
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            57.14% <span><div class="circle-sm" style="background-color: #FF9C00;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.SearchEmptyView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChuckNorris.SearchEmptyView&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchEmptyView.buildViewHierarchy() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchEmptyView.setupConstraints() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchEmptyView.setupAdditionalConfiguration() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="fcaa8c6647d5fb8cbc073426a20c629b9afadd7c">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            FactsEmptyView.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            90.24% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="fcaa8c6647d5fb8cbc073426a20c629b9afadd7c" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UIImageView in variable initialization expression of ChuckNorris.FactsEmptyView.(imgView in _27930EFF13F26E7174B9DA9F64E8BA64) : __C.UIImageView
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UILabel in variable initialization expression of ChuckNorris.FactsEmptyView.(titleLabel in _27930EFF13F26E7174B9DA9F64E8BA64) : __C.UILabel
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            57.14% <span><div class="circle-sm" style="background-color: #FF9C00;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.FactsEmptyView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChuckNorris.FactsEmptyView&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsEmptyView.buildViewHierarchy() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsEmptyView.setupConstraints() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsEmptyView.setupAdditionalConfiguration() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="ae721bd0fa0ae6756a2180878b4043baae576c11">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            SearchPastSearchCollectionViewCell.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            90.70% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="ae721bd0fa0ae6756a2180878b4043baae576c11" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            static ChuckNorris.SearchPastSearchCollectionViewCell.size(width: CoreGraphics.CGFloat) -&gt; __C.CGSize
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UILabel in variable initialization expression of ChuckNorris.SearchPastSearchCollectionViewCell.(titleLabel in _F1ACB0E02A8FD0F14FCC67403FCB7864) : __C.UILabel
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            57.14% <span><div class="circle-sm" style="background-color: #FF9C00;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.SearchPastSearchCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChuckNorris.SearchPastSearchCollectionViewCell&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchPastSearchCollectionViewCell.isHighlighted.didset : Swift.Bool
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchPastSearchCollectionViewCell.isSelected.didset : Swift.Bool
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchPastSearchCollectionViewCell.setup(text: Swift.String, index: Swift.Int) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchPastSearchCollectionViewCell.buildViewHierarchy() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchPastSearchCollectionViewCell.setupConstraints() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchPastSearchCollectionViewCell.setupAdditionalConfiguration() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="be146e58140432149d2525462b4104c5edcd211b">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            FactsViewControllerScreen.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            91.30% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="be146e58140432149d2525462b4104c5edcd211b" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UICollectionView in ChuckNorris.FactsViewControllerScreen.collectionView.getter : __C.UICollectionView
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            57.14% <span><div class="circle-sm" style="background-color: #FF9C00;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.FactsViewControllerScreen.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChuckNorris.FactsViewControllerScreen&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewControllerScreen.changeUI(for: ChuckNorris.FactsViewControllerViewState) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewControllerScreen.buildViewHierarchy() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewControllerScreen.setupConstraints() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsViewControllerScreen.setupAdditionalConfiguration() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="9fccdce021b4bcfe230f8e32fee6560726cead83">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            SearchTitleCollectionViewCell.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            91.84% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="9fccdce021b4bcfe230f8e32fee6560726cead83" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchTitleType.title.getter : Swift.String
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchTitleType.accessibilityIdentifier.getter : Swift.String
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            static ChuckNorris.SearchTitleCollectionViewCell.size(width: CoreGraphics.CGFloat) -&gt; __C.CGSize
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UILabel in variable initialization expression of ChuckNorris.SearchTitleCollectionViewCell.(titleLabel in _55B9972D997077F7C258CC5008F3772B) : __C.UILabel
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            57.14% <span><div class="circle-sm" style="background-color: #FF9C00;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.SearchTitleCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChuckNorris.SearchTitleCollectionViewCell&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchTitleCollectionViewCell.setup(type: ChuckNorris.SearchTitleType) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchTitleCollectionViewCell.buildViewHierarchy() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchTitleCollectionViewCell.setupConstraints() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchTitleCollectionViewCell.setupAdditionalConfiguration() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="5040cf049b5cd873bf33cb75d2c6e378d3cbc5ab">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            ApiError.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            93.75% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="5040cf049b5cd873bf33cb75d2c6e378d3cbc5ab" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.ApiError.message.getter : Swift.String
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            93.75% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="c50f0c28324d5519f8f8c28b5e67f18741520e58">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            SearchSuggestionCollectionViewCell.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            93.83% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="c50f0c28324d5519f8f8c28b5e67f18741520e58" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            static ChuckNorris.SearchSuggestionCollectionViewCell.size(width: CoreGraphics.CGFloat, category: Swift.String) -&gt; __C.CGSize
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            92.86% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UIView in variable initialization expression of ChuckNorris.SearchSuggestionCollectionViewCell.(cardView in _37B32CF51D929B0EE37108D6A456731B) : __C.UIView
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UILabel in variable initialization expression of ChuckNorris.SearchSuggestionCollectionViewCell.(cardLabel in _37B32CF51D929B0EE37108D6A456731B) : __C.UILabel
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            57.14% <span><div class="circle-sm" style="background-color: #FF9C00;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.SearchSuggestionCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChuckNorris.SearchSuggestionCollectionViewCell&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchSuggestionCollectionViewCell.isHighlighted.didset : Swift.Bool
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; () in ChuckNorris.SearchSuggestionCollectionViewCell.isHighlighted.didset : Swift.Bool
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchSuggestionCollectionViewCell.isSelected.didset : Swift.Bool
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchSuggestionCollectionViewCell.setup(category: Swift.String, index: Swift.Int) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchSuggestionCollectionViewCell.buildViewHierarchy() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchSuggestionCollectionViewCell.setupConstraints() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchSuggestionCollectionViewCell.setupAdditionalConfiguration() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="a3238683b9cf23fbcaba7b96113b4881ef7f7313">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            Request.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            93.97% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="a3238683b9cf23fbcaba7b96113b4881ef7f7313" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.Request.__deallocating_deinit
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.Request.get(params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, completion: (ChuckNorris.Result&lt;Foundation.Data&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            92.59% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 (Foundation.URLQueryItem) -&gt; Swift.Bool in ChuckNorris.Request.get(params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, completion: (ChuckNorris.Result&lt;Foundation.Data&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #2 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ChuckNorris.Request.get(params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, completion: (ChuckNorris.Result&lt;Foundation.Data&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; () in closure #2 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ChuckNorris.Request.get(params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, completion: (ChuckNorris.Result&lt;Foundation.Data&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            92.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.Request.cancel() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="9c6a4d0548bb21708e45b8966badb95528a1c22f">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            SearchViewController.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            94.12% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="9c6a4d0548bb21708e45b8966badb95528a1c22f" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.(state in _F7BC15D183A66C7232B7704149CCA908).didset : ChuckNorris.SearchViewControllerViewState
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.(types in _F7BC15D183A66C7232B7704149CCA908).didset : Swift.Array&lt;ChuckNorris.SearchDataSourceType&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            70.00% <span><div class="circle-sm" style="background-color: #FCFF00;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.SearchViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChuckNorris.SearchViewController&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.__deallocating_deinit
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.loadView() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.viewDidLoad() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.(setupNavigationItem in _F7BC15D183A66C7232B7704149CCA908)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.(setupSearchController in _F7BC15D183A66C7232B7704149CCA908)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.(setupCollectionView in _F7BC15D183A66C7232B7704149CCA908)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.(setupDataSourceTypes in _F7BC15D183A66C7232B7704149CCA908)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 (ChuckNorris.PastSearch, ChuckNorris.PastSearch) -&gt; Swift.Bool in ChuckNorris.SearchViewController.(setupDataSourceTypes in _F7BC15D183A66C7232B7704149CCA908)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.(getCategories in _F7BC15D183A66C7232B7704149CCA908)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 (ChuckNorris.Result&lt;Swift.Array&lt;Swift.String&gt;&gt;) -&gt; () in ChuckNorris.SearchViewController.(getCategories in _F7BC15D183A66C7232B7704149CCA908)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.(getSearchRequest in _F7BC15D183A66C7232B7704149CCA908)(text: Swift.Optional&lt;Swift.String&gt;) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            94.12% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 (ChuckNorris.Result&lt;ChuckNorris.JokesSearchResponse&gt;) -&gt; () in ChuckNorris.SearchViewController.(getSearchRequest in _F7BC15D183A66C7232B7704149CCA908)(text: Swift.Optional&lt;Swift.String&gt;) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            93.33% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.collectionView(_: __C.UICollectionView, layout: __C.UICollectionViewLayout, sizeForItemAt: Foundation.IndexPath) -&gt; __C.CGSize
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.searchBarSearchButtonClicked(__C.UISearchBar) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewController.searchErrorViewDidTapButton() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="0b48cf1d5b554e249f39bb3f28553a7e5205e6c0">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            FactsCollectionViewCell.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            94.31% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="0b48cf1d5b554e249f39bb3f28553a7e5205e6c0" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            static ChuckNorris.FactsCollectionViewCell.size(width: CoreGraphics.CGFloat, text: Swift.String) -&gt; __C.CGSize
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            static ChuckNorris.FactsCollectionViewCell.getFontSize(from: Swift.String) -&gt; CoreGraphics.CGFloat
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            static ChuckNorris.FactsCollectionViewCell.getCorrectCategory(from: Swift.Optional&lt;Swift.Array&lt;Swift.String&gt;&gt;) -&gt; Swift.String
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            85.71% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UILabel in variable initialization expression of ChuckNorris.FactsCollectionViewCell.(label in _B1AACDAF8812C3DB7663B1428DFE0B1B) : __C.UILabel
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UIView in variable initialization expression of ChuckNorris.FactsCollectionViewCell.(categoryCardView in _B1AACDAF8812C3DB7663B1428DFE0B1B) : __C.UIView
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UILabel in variable initialization expression of ChuckNorris.FactsCollectionViewCell.(categoryCardLabel in _B1AACDAF8812C3DB7663B1428DFE0B1B) : __C.UILabel
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UIButton in ChuckNorris.FactsCollectionViewCell.(shareButton in _B1AACDAF8812C3DB7663B1428DFE0B1B).getter : __C.UIButton
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            57.14% <span><div class="circle-sm" style="background-color: #FF9C00;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.FactsCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChuckNorris.FactsCollectionViewCell&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsCollectionViewCell.setup(joke: ChuckNorris.Joke, index: Swift.Int, delegate: ChuckNorris.FactsCollectionViewCellDelegate) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsCollectionViewCell.(didTapShareButton in _B1AACDAF8812C3DB7663B1428DFE0B1B)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            85.71% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.FactsCollectionViewCell.(didTapShareButton in _B1AACDAF8812C3DB7663B1428DFE0B1B)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsCollectionViewCell.buildViewHierarchy() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsCollectionViewCell.setupConstraints() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsCollectionViewCell.setupAdditionalConfiguration() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="eb48a748f65e2ef86dfd1980ce0450e9d7888d33">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            SearchViewControllerScreen.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            95.29% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="eb48a748f65e2ef86dfd1980ce0450e9d7888d33" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UICollectionView in ChuckNorris.SearchViewControllerScreen.collectionView.getter : __C.UICollectionView
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UISearchController in variable initialization expression of ChuckNorris.SearchViewControllerScreen.searchController : __C.UISearchController
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 () -&gt; __C.UIActivityIndicatorView in variable initialization expression of ChuckNorris.SearchViewControllerScreen.(activityIndicator in _FBB1490B1307071CBBDBFEBBAC35AB24) : __C.UIActivityIndicatorView
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            62.50% <span><div class="circle-sm" style="background-color: #FF9C00;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () -&gt; Swift.String in ChuckNorris.SearchViewControllerScreen.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChuckNorris.SearchViewControllerScreen&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            0.00% <span><div class="circle-sm" style="background-color: #FF0000;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewControllerScreen.changeUI(for: ChuckNorris.SearchViewControllerViewState) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewControllerScreen.buildViewHierarchy() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewControllerScreen.setupConstraints() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchViewControllerScreen.setupAdditionalConfiguration() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="5be195c40e70565431f0b8001de5119415afdfe6">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            BaseWebservice.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            95.95% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="5be195c40e70565431f0b8001de5119415afdfe6" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.BaseWebservice.__deallocating_deinit
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.BaseWebservice.request(urlString: Swift.String, method: ChuckNorris.HTTPMethod, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, completion: (ChuckNorris.Result&lt;Foundation.Data&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            94.44% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 (ChuckNorris.Result&lt;Foundation.Data&gt;) -&gt; () in ChuckNorris.BaseWebservice.request(urlString: Swift.String, method: ChuckNorris.HTTPMethod, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, completion: (ChuckNorris.Result&lt;Foundation.Data&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 (ChuckNorris.WebserviceRequestProtocol) -&gt; Swift.Bool in closure #1 (ChuckNorris.Result&lt;Foundation.Data&gt;) -&gt; () in ChuckNorris.BaseWebservice.request(urlString: Swift.String, method: ChuckNorris.HTTPMethod, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, completion: (ChuckNorris.Result&lt;Foundation.Data&gt;) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.BaseWebservice.cancelAllRequests() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 (ChuckNorris.WebserviceRequestProtocol) -&gt; () in ChuckNorris.BaseWebservice.cancelAllRequests() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.BaseWebservice.retry&lt;A where A: Swift.Decodable&gt;(_: Swift.Int, task: ((A) -&gt; (), (ChuckNorris.ApiError) -&gt; ()) -&gt; (), success: (A) -&gt; (), failure: (ChuckNorris.ApiError) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 (A) -&gt; () in ChuckNorris.BaseWebservice.retry&lt;A where A: Swift.Decodable&gt;(_: Swift.Int, task: ((A) -&gt; (), (ChuckNorris.ApiError) -&gt; ()) -&gt; (), success: (A) -&gt; (), failure: (ChuckNorris.ApiError) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #2 (ChuckNorris.ApiError) -&gt; () in ChuckNorris.BaseWebservice.retry&lt;A where A: Swift.Decodable&gt;(_: Swift.Int, task: ((A) -&gt; (), (ChuckNorris.ApiError) -&gt; ()) -&gt; (), success: (A) -&gt; (), failure: (ChuckNorris.ApiError) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            88.24% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #1 () throws -&gt; Swift.Bool in closure #2 (ChuckNorris.ApiError) -&gt; () in ChuckNorris.BaseWebservice.retry&lt;A where A: Swift.Decodable&gt;(_: Swift.Int, task: ((A) -&gt; (), (ChuckNorris.ApiError) -&gt; ()) -&gt; (), success: (A) -&gt; (), failure: (ChuckNorris.ApiError) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            implicit closure #2 () throws -&gt; Swift.Bool in closure #2 (ChuckNorris.ApiError) -&gt; () in ChuckNorris.BaseWebservice.retry&lt;A where A: Swift.Decodable&gt;(_: Swift.Int, task: ((A) -&gt; (), (ChuckNorris.ApiError) -&gt; ()) -&gt; (), success: (A) -&gt; (), failure: (ChuckNorris.ApiError) -&gt; ()) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="5d82ede115d0bfa05b8ee8eccc5d9aab2be56b8b">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            Database.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            97.96% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="5d82ede115d0bfa05b8ee8eccc5d9aab2be56b8b" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.Database.save&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(object: A, forKey: ChuckNorris.Database.Keys) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            97.22% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            closure #1 (ChuckNorris.PastSearch) -&gt; Swift.Bool in ChuckNorris.Database.save&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(object: A, forKey: ChuckNorris.Database.Keys) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.Database.getObject&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(key: ChuckNorris.Database.Keys) -&gt; Swift.Optional&lt;A&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="a935836ab850d283ce72fa2f1f43485e1e1ba937">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            Endpoints.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="a935836ab850d283ce72fa2f1f43485e1e1ba937" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.Endpoints.jokes.endpoint.getter : Swift.String
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.Endpoints.jokes.value.getter : Swift.String
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="86cb32890ba41eedb39e1ff599c18aa8e5dbff72">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            UILabel+Extension.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="86cb32890ba41eedb39e1ff599c18aa8e5dbff72" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):__C.UILabel.height(width: CoreGraphics.CGFloat) -&gt; CoreGraphics.CGFloat
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="eb30a943c558d957f1fc924ab0e8e6f837f077b7">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            ApplicationCoordinator.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="eb30a943c558d957f1fc924ab0e8e6f837f077b7" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.ApplicationCoordinator.start() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="6769c4c687865231a1077513a50c282014a05e1f">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            FactsDataSource.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="6769c4c687865231a1077513a50c282014a05e1f" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsDataSource.(register in _BB3F97FA36756CEBD3FCC8A6F5821CCC)(collectionView: __C.UICollectionView) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsDataSource.collectionView(_: __C.UICollectionView, numberOfItemsInSection: Swift.Int) -&gt; Swift.Int
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.FactsDataSource.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="220d2838617df5cb3227ce6303f9ee7a505950d2">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            Array+Extension.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="220d2838617df5cb3227ce6303f9ee7a505950d2" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):Swift.Array.getRandomElements(Swift.Int) -&gt; Swift.Array&lt;A&gt;
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="47df8b62d4384cecc3d0d0729d416646ba2a0e3b">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            SearchDataSource.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="47df8b62d4384cecc3d0d0729d416646ba2a0e3b" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchDataSource.(register in _E6403D784A85F84BB2A3F20891C2358E)(collectionView: __C.UICollectionView) -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchDataSource.numberOfSections(in: __C.UICollectionView) -&gt; Swift.Int
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchDataSource.collectionView(_: __C.UICollectionView, numberOfItemsInSection: Swift.Int) -&gt; Swift.Int
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.SearchDataSource.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="88ceaf5fce934b60648b7148b212a506ab68682e">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            AppDelegate.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="88ceaf5fce934b60648b7148b212a506ab68682e" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.AppDelegate.(configuredWindow in _D817D640B0ABC284443022BB54276883)() -&gt; __C.UIWindow
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.AppDelegate.(configureNavigationBar in _D817D640B0ABC284443022BB54276883)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.AppDelegate.(configureSearchBar in _D817D640B0ABC284443022BB54276883)() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            ChuckNorris.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="dc5451d98f400cfd8e662f5d754bf864ccd8893e">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            PastSearch.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="dc5451d98f400cfd8e662f5d754bf864ccd8893e" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+        <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            static ChuckNorris.PastSearch.== infix(ChuckNorris.PastSearch, ChuckNorris.PastSearch) -&gt; Swift.Bool
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="48dbbccfd7f7e29da27ad6b07981453d20ee41fa">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            UICollectionReusableView+Extension.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="48dbbccfd7f7e29da27ad6b07981453d20ee41fa" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            static (extension in ChuckNorris):__C.UICollectionReusableView.identifier.getter : Swift.String
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+        <!-- Single file starts here -->
+        
+        <div class="row file-row" file-id="6b3cbe850b68f15ade1907387af935101c8c4909">
+        
+          <div class="col-xs-10 col-md-10 col-lg-10">
+            <span><img class="file-icon" src="resources/file_swift.png"/></span>
+            CodeView.swift
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <div class="functions-wrapper" id="6b3cbe850b68f15ade1907387af935101c8c4909" style="display: none;">
+                <!-- Single function starts here-->
+        <div class="row function-row">
+          <div class="col-xs-10 col-md-10 col-lg-10 function-name">
+            (extension in ChuckNorris):ChuckNorris.CodeView.setupViews() -&gt; ()
+          </div>
+          <div class="col-xs-2 col-md-2 col-lg-2 text-right">
+            100.00% <span><div class="circle-sm" style="background-color: #1FCB32;"></div></span>
+          </div>
+        </div>
+        <!-- Single function ends here -->
+
+        </div>
+        <!-- Single file ends here -->
+
+      </div>
+      <!-- File row ends here -->
+    </div>
+    </div>
+    <!-- Target details end here -->
+
+    <!-- Footer starts here -->
+    <div class="row footer">
+      <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8 text-center">
+        xcov - Xcode coverage reports without hassle - A tool developed by
+        <a href="https://github.com/nakiostudio" target="_blank">Carlos Vidal</a> -
+        <a href="https://twitter.com/carlostify" target="_blank">@carlostify</a>
+      </div>
+    </div>
+    <!-- Footer ends here -->
+  </div>
+  <!-- Body template ends here -->
+</body>
+</html>
