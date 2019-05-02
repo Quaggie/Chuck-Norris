@@ -16,12 +16,10 @@ protocol FactsCoordinatorProtocol: AnyObject {
 final class FactsCoordinator: Coordinator {
   // MARK: - Views -
   private let navigationController: UINavigationController
-  private let service: ChuckNorrisWebserviceProtocol
 
   // MARK: - Init -
-  init(navigationController: UINavigationController, service: ChuckNorrisWebserviceProtocol = ChuckNorrisWebservice()) {
+  init(navigationController: UINavigationController) {
     self.navigationController = navigationController
-    self.service = service
   }
 
   // MARK: - Coordinator -
