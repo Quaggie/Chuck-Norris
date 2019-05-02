@@ -2,78 +2,91 @@
 //  ChuckNorrisWebserviceSpec.swift
 //  ChuckNorrisTests
 //
-//  Created by Jonathan Bijos on 01/05/19.
+//  Created by jonathan.p.bijos on 02/05/19.
 //  Copyright © 2019 jonathanbijos. All rights reserved.
 //
-
 
 import Quick
 import Nimble
 @testable import ChuckNorris
 
-final class WebserviceAutoRetrySpec: QuickSpec {
+final class ChuckNorrisWebserviceSpec: QuickSpec {
+
+  final private class Service: Webservice {
+    var requests: [Int] = []
+    func request(urlString: String, method: HTTPMethod, parameters: Params?, completion: @escaping (Result<Data>) -> Void) {
+      requests.append(0)
+      if urlString == Endpoints.jokes.categories.value {
+        let model = ["Music"]
+        let encoder = JSONEncoder()
+        let data = try! encoder.encode(model)
+        completion(.success(data))
+      } else if urlString == Endpoints.jokes.search.value {
+        let model = JokesSearchResponse(total: 1, result: [Joke.mockJoke()])
+        let encoder = JSONEncoder()
+        let data = try! encoder.encode(model)
+        completion(.success(data))
+      } else {
+        completion(.error(.invalidEndpoint))
+      }
+    }
+
+    func cancelAllRequests() {
+      requests = []
+    }
+
+    func retry<T>(_ attempts: Int, task: @escaping (@escaping (T) -> Void, @escaping (ApiError) -> Void) -> Void, success: @escaping (T) -> Void, failure: @escaping (ApiError) -> Void) where T : Decodable {
+      task({ obj in
+        success(obj)
+      }) { err in
+        failure(err)
+      }
+    }
+  }
+
   override func spec() {
-    describe("Database") {
-      var sut: BaseWebservice!
+    describe("ChuckNorrisWebserviceSpec") {
+      var sut: ChuckNorrisWebserviceProtocol!
+      var service: Webservice!
 
       beforeEach {
-        sut = BaseWebservice()
+        service = Service()
+        sut = ChuckNorrisWebservice(service: service)
       }
 
-      context("When Retrying") {
-        it("should retry 2 times when there was an error") {
-          var counter: Int = 0
-
-          waitUntil(timeout: 13) { (done) in
-            sut.retry(2, task: { (successCompletion, errorCompletion) in
-              counter += 1
-              errorCompletion(.serverError)
-            }, success: { (result: Int) in
-              XCTFail("This test should throw an error")
-            }, failure: { (error) in
-              expect(counter).to(equal(3))
-              done()
-            })
-          }
-        }
-
-        it("should retry 1 time only if there is a success on the first retry") {
-          var counter: Int = 0
-
-          waitUntil(timeout: 5) { (done) in
-            sut.retry(2, task: { (successCompletion, errorCompletion) in
-              counter += 1
-              if counter == 2 {
-                successCompletion(counter)
-              } else {
-                errorCompletion(.serverError)
+      context("On requesting") {
+        it("should return the correct number of categories") {
+          service.cancelAllRequests()
+          waitUntil { done in
+            sut.getCategories { (result) in
+              switch result {
+              case .success(let response):
+                expect(response.count).to(equal(1))
+                done()
+              case .error:
+                XCTFail("This test is meant to be a success")
               }
-            }, success: { (result: Int) in
-              expect(counter).to(equal(2))
-              done()
-            }, failure: { (error) in
-              XCTFail("This test be a success")
-            })
+            }
           }
         }
 
-        it("should not retry if the request was a success on the first try") {
-          var counter: Int = 0
-
-          waitUntil { (done) in
-            sut.retry(2, task: { (successCompletion, errorCompletion) in
-              counter += 1
-              successCompletion(counter)
-            }, success: { (result: Int) in
-              expect(counter).to(equal(1))
-              done()
-            }, failure: { (error) in
-              XCTFail("This test be a success")
-            })
+        it("should return the correct number of jokes") {
+          service.cancelAllRequests()
+          waitUntil { done in
+            sut.getJokesBySearching(query: "") { (result) in
+              switch result {
+              case .success(let response):
+                expect(response.total).to(equal(1))
+                done()
+              case .error:
+                XCTFail("This test is meant to be a success")
+              }
+            }
           }
         }
 
       }
+
     }
   }
 }

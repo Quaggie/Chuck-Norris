@@ -17,6 +17,7 @@
 		2899BF72227B37AA00878959 /* Category+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BF6F227B37AA00878959 /* Category+Extension.swift */; };
 		2899BF73227B37AA00878959 /* PastSearch+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BF70227B37AA00878959 /* PastSearch+Extension.swift */; };
 		2899BF74227B37AA00878959 /* JokesSearchResponse+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BF71227B37AA00878959 /* JokesSearchResponse+Extension.swift */; };
+		2899BF76227B3F5E00878959 /* ChuckNorrisWebserviceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BF75227B3F5E00878959 /* ChuckNorrisWebserviceSpec.swift */; };
 		6284B623D9D9F2A9CA7B5BAE /* Pods_ChuckNorris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EAD1F148666D24F5307B3F /* Pods_ChuckNorris.framework */; };
 		93D57EC7677FC7FFBBB54598 /* Pods_ChuckNorris_ChuckNorrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6057A582B106502BBC6191 /* Pods_ChuckNorris_ChuckNorrisTests.framework */; };
 		E00E4A012273C89500772588 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00E4A002273C89500772588 /* Database.swift */; };
@@ -70,7 +71,7 @@
 		E046C45F2279F9ED00F2C241 /* Category+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C45D2279F8C600F2C241 /* Category+Extension.swift */; };
 		E046C4612279FFAC00F2C241 /* PastSearch+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C4602279FFAC00F2C241 /* PastSearch+Extension.swift */; };
 		E046C464227A0AAE00F2C241 /* WebserviceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C463227A0AAE00F2C241 /* WebserviceSpec.swift */; };
-		E046C466227A239200F2C241 /* ChuckNorrisWebserviceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C465227A239200F2C241 /* ChuckNorrisWebserviceSpec.swift */; };
+		E046C466227A239200F2C241 /* WebserviceAutoRetrySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C465227A239200F2C241 /* WebserviceAutoRetrySpec.swift */; };
 		E046C469227A240000F2C241 /* SearchDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C468227A240000F2C241 /* SearchDataSourceSpec.swift */; };
 		E046C47A227A2E0A00F2C241 /* Joke+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C476227A2E0900F2C241 /* Joke+Extension.swift */; };
 		E046C47E227A335400F2C241 /* SearchViewControllerLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E046C47D227A335400F2C241 /* SearchViewControllerLogicTests.swift */; };
@@ -113,6 +114,7 @@
 		2899BF6F227B37AA00878959 /* Category+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+Extension.swift"; sourceTree = "<group>"; };
 		2899BF70227B37AA00878959 /* PastSearch+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PastSearch+Extension.swift"; sourceTree = "<group>"; };
 		2899BF71227B37AA00878959 /* JokesSearchResponse+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JokesSearchResponse+Extension.swift"; sourceTree = "<group>"; };
+		2899BF75227B3F5E00878959 /* ChuckNorrisWebserviceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisWebserviceSpec.swift; sourceTree = "<group>"; };
 		31EF5E124B4F4D814A540631 /* Pods-ChuckNorris-ChuckNorrisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorris-ChuckNorrisUITests.release.xcconfig"; path = "Target Support Files/Pods-ChuckNorris-ChuckNorrisUITests/Pods-ChuckNorris-ChuckNorrisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		446AC4BA44CEB26BB17B0336 /* Pods-ChuckNorris-ChuckNorrisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorris-ChuckNorrisUITests.debug.xcconfig"; path = "Target Support Files/Pods-ChuckNorris-ChuckNorrisUITests/Pods-ChuckNorris-ChuckNorrisUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C6057A582B106502BBC6191 /* Pods_ChuckNorris_ChuckNorrisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuckNorris_ChuckNorrisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,7 +176,7 @@
 		E046C45D2279F8C600F2C241 /* Category+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Extension.swift"; sourceTree = "<group>"; };
 		E046C4602279FFAC00F2C241 /* PastSearch+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PastSearch+Extension.swift"; sourceTree = "<group>"; };
 		E046C463227A0AAE00F2C241 /* WebserviceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebserviceSpec.swift; sourceTree = "<group>"; };
-		E046C465227A239200F2C241 /* ChuckNorrisWebserviceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisWebserviceSpec.swift; sourceTree = "<group>"; };
+		E046C465227A239200F2C241 /* WebserviceAutoRetrySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebserviceAutoRetrySpec.swift; sourceTree = "<group>"; };
 		E046C468227A240000F2C241 /* SearchDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataSourceSpec.swift; sourceTree = "<group>"; };
 		E046C476227A2E0900F2C241 /* Joke+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Joke+Extension.swift"; sourceTree = "<group>"; };
 		E046C47D227A335400F2C241 /* SearchViewControllerLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerLogicTests.swift; sourceTree = "<group>"; };
@@ -608,7 +610,8 @@
 			isa = PBXGroup;
 			children = (
 				E046C463227A0AAE00F2C241 /* WebserviceSpec.swift */,
-				E046C465227A239200F2C241 /* ChuckNorrisWebserviceSpec.swift */,
+				E046C465227A239200F2C241 /* WebserviceAutoRetrySpec.swift */,
+				2899BF75227B3F5E00878959 /* ChuckNorrisWebserviceSpec.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -974,8 +977,9 @@
 				2899BF74227B37AA00878959 /* JokesSearchResponse+Extension.swift in Sources */,
 				2899BF73227B37AA00878959 /* PastSearch+Extension.swift in Sources */,
 				285D8BB5227338ED00756043 /* FactsDataSourceSpec.swift in Sources */,
-				E046C466227A239200F2C241 /* ChuckNorrisWebserviceSpec.swift in Sources */,
+				E046C466227A239200F2C241 /* WebserviceAutoRetrySpec.swift in Sources */,
 				285D8BB722733C5100756043 /* FactsCollectionViewCellSpec.swift in Sources */,
+				2899BF76227B3F5E00878959 /* ChuckNorrisWebserviceSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
