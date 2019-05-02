@@ -57,6 +57,22 @@ final class FactsViewControllerTests: KIFTestCase {
     // Setup controller with previously saved database
     setupController()
     tester.tapView(withAccessibilityIdentifier: "factsCollectionViewCellShareButton")
+    // RemoteViewBridge is the activity view from UIKit
     tester.waitForView(withAccessibilityIdentifier: "RemoteViewBridge")
+  }
+
+  func testCanOnlyShow10JokesOnAppOpen() {
+    // Add jokes to defaults
+    let jokes = Joke.mockJokes(total: 20)
+    database.save(object: jokes, forKey: Database.Keys.facts)
+    // Setup controller with previously saved database
+    setupController()
+    // Look for collectionView
+    let collectionView = tester.waitForView(withAccessibilityIdentifier: "factsViewControllerCollectionView") as! UICollectionView
+    let lastItem = collectionView.numberOfItems(inSection: 0)
+    collectionView.scrollToItem(at: IndexPath(item: lastItem - 1, section: 0), at: .bottom, animated: false)
+
+    let eleventhView = tester.tryFindingView(withAccessibilityIdentifier: "factsCollectionViewCellContentView10")
+    XCTAssertFalse(eleventhView)
   }
 }

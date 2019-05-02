@@ -20,6 +20,15 @@ enum SearchTitleType: String {
       return "Past Searches"
     }
   }
+
+  var accessibilityIdentifier: String {
+    switch self {
+    case .suggestions:
+      return "searchTitleCollectionViewCellSuggestions"
+    case .pastSearches:
+      return "searchTitleCollectionViewCellPastSearches"
+    }
+  }
 }
 
 final class SearchTitleCollectionViewCell: UICollectionViewCell {
@@ -33,7 +42,6 @@ final class SearchTitleCollectionViewCell: UICollectionViewCell {
     let label = UILabel()
     label.textColor = Color.black
     label.font = UIFont.boldSystemFont(ofSize: 18)
-    label.accessibilityIdentifier = "searchTitleCollectionViewCellLabel"
     return label
   }()
 
@@ -50,6 +58,7 @@ final class SearchTitleCollectionViewCell: UICollectionViewCell {
   // MARK: - Public functions -
   func setup(type: SearchTitleType) {
     titleLabel.text = type.title
+    titleLabel.accessibilityIdentifier = type.accessibilityIdentifier
   }
 }
 

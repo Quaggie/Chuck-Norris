@@ -65,15 +65,16 @@ final class SearchViewControllerLogicTests: KIFTestCase {
   }
 
   func testLastPastSearchIsOnTop() {
-    PastSearch.mockPastSearches(total: 3).forEach { (pastSearch) in
+    PastSearch.mockPastSearches(total: 5).forEach { (pastSearch) in
       database.save(object: pastSearch, forKey: .pastSearches)
     }
     setupController(categoryResponseType: .success, searchResponseType: .success)
+    tester.waitForAnimationsToFinish()
     let firstViewBefore = tester.waitForView(withAccessibilityIdentifier: "searchPastSearchCollectionViewCellLabel0") as! UILabel
-    XCTAssertTrue(firstViewBefore.text == "Search2")
+    XCTAssertTrue(firstViewBefore.text == "Search4")
 
     tester.enterText("Chuck", intoViewWithAccessibilityIdentifier: "searchViewControllerScreenSearchBar")
-    tester.tapView(withAccessibilityLabel: "Search")
+    tester.tapView(withAccessibilityLabel: NSLocalizedString("Search", comment: ""))
 
     setupController(categoryResponseType: .success, searchResponseType: .success)
     let firstViewAfter = tester.waitForView(withAccessibilityIdentifier: "searchPastSearchCollectionViewCellLabel0") as! UILabel

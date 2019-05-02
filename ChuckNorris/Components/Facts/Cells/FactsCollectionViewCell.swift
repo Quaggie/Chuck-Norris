@@ -91,8 +91,9 @@ final class FactsCollectionViewCell: UICollectionViewCell {
   }
 
   // MARK: - Public functions -
-  func setup(joke: Joke, delegate: FactsCollectionViewCellDelegate) {
+  func setup(joke: Joke, index: Int, delegate: FactsCollectionViewCellDelegate) {
     self.joke = joke
+    contentView.accessibilityIdentifier = "factsCollectionViewCellContentView\(index)"
     self.delegate = delegate
     let fontSize = FactsCollectionViewCell.getFontSize(from: joke.value)
     label.font = UIFont.boldSystemFont(ofSize: fontSize)
@@ -162,7 +163,5 @@ extension FactsCollectionViewCell: CodeView {
                 offset: CGSize(width: 3, height: 2),
                 opacity: 0.12,
                 radius: 20)
-
-    contentView.accessibilityIdentifier = "factsCollectionViewCellContentView"
   }
 }

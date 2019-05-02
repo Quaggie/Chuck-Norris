@@ -153,23 +153,6 @@ final class WebserviceSpec: QuickSpec {
         }
       }
 
-      it("returns cancelled response when there is a cancelled response") {
-        let error = NSError(domain: String(NSURLErrorCancelled), code: URLError.cancelled.rawValue, userInfo: nil)
-        self.stub(everything, failure(error))
-
-        waitUntil { done in
-          webservice.request(urlString: "http://www.google.com.br", method: .get, parameters: nil) { (result) in
-            switch result {
-            case .success:
-              XCTFail("This test must be an error")
-            case .error(let error):
-              expect(error) == ApiError.cancelled
-            }
-            done()
-          }
-        }
-      }
-
     }
   }
 }

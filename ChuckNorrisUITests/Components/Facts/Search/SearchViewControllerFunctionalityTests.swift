@@ -184,6 +184,22 @@ final class SearchViewControllerFunctionalityTests: KIFTestCase {
     XCTAssertTrue(dlg.delegateCalled)
   }
 
+  func testAssurePastSearchesLayoutIsOnlyWhenASearchWasMade() {
+    setupController(categoryResponseType: .success, searchResponseType: .success)
+    let pastSearchIsAvailable = tester.tryFindingView(withAccessibilityIdentifier: SearchTitleType.pastSearches.accessibilityIdentifier)
+    XCTAssertFalse(pastSearchIsAvailable)
+
+    setupController(categoryResponseType: .success, searchResponseType: .success)
+    // Enter text into searchbar
+    tester.enterText("Chuck", intoViewWithAccessibilityIdentifier: "searchViewControllerScreenSearchBar")
+    // Tap search on the keyboard
+    tester.tapView(withAccessibilityLabel: NSLocalizedString("Search", comment: ""))
+
+    // Reset view
+    setupController(categoryResponseType: .success, searchResponseType: .success)
+    tester.waitForView(withAccessibilityIdentifier: SearchTitleType.pastSearches.accessibilityIdentifier)
+  }
+
   func testPastSearchesLayout() {
     addOnePastSearchToDatabase()
     setupController(categoryResponseType: .success, searchResponseType: .success)
@@ -204,7 +220,7 @@ final class SearchViewControllerFunctionalityTests: KIFTestCase {
     // Enter text into searchbar
     tester.enterText("Chuck", intoViewWithAccessibilityIdentifier: "searchViewControllerScreenSearchBar")
     // Tap search on the keyboard
-    tester.tapView(withAccessibilityLabel: "Search")
+    tester.tapView(withAccessibilityLabel: NSLocalizedString("Search", comment: ""))
     tester.waitForView(withAccessibilityIdentifier: "searchViewControllerScreenActivityIndicator")
     let dlg = delegate as! Delegate
     XCTAssertTrue(dlg.delegateCalled)

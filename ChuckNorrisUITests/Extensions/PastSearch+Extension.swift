@@ -12,7 +12,9 @@ extension PastSearch {
   static func mockPastSearches(total: Int) -> [PastSearch] {
     var pastSearches: [PastSearch] = []
     for index in 0..<total {
-      pastSearches.append(PastSearch(text: "Search\(index)"))
+      let pastSearch = PastSearch(text: "Search\(index)")
+      pastSearch.dateAdded = Date(timeIntervalSince1970: Double(index))
+      pastSearches.append(pastSearch)
     }
     return pastSearches
   }

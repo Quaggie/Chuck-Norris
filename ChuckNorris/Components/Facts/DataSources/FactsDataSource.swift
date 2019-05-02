@@ -36,7 +36,7 @@ extension FactsDataSource: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as FactsCollectionViewCell
     let joke = jokes[indexPath.item]
-    cell.setup(joke: joke, delegate: delegate)
+    cell.setup(joke: joke, index: indexPath.item, delegate: delegate)
     return cell
   }
 }
