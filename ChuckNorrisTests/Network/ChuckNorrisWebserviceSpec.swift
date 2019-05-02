@@ -11,11 +11,8 @@ import Nimble
 @testable import ChuckNorris
 
 final class ChuckNorrisWebserviceSpec: QuickSpec {
-
   final private class Service: Webservice {
-    var requests: [Int] = []
     func request(urlString: String, method: HTTPMethod, parameters: Params?, completion: @escaping (Result<Data>) -> Void) {
-      requests.append(0)
       if urlString == Endpoints.jokes.categories.value {
         let model = ["Music"]
         let encoder = JSONEncoder()
@@ -32,7 +29,7 @@ final class ChuckNorrisWebserviceSpec: QuickSpec {
     }
 
     func cancelAllRequests() {
-      requests = []
+
     }
 
     func retry<T>(_ attempts: Int, task: @escaping (@escaping (T) -> Void, @escaping (ApiError) -> Void) -> Void, success: @escaping (T) -> Void, failure: @escaping (ApiError) -> Void) where T : Decodable {
@@ -56,7 +53,6 @@ final class ChuckNorrisWebserviceSpec: QuickSpec {
 
       context("On requesting") {
         it("should return the correct number of categories") {
-          service.cancelAllRequests()
           waitUntil { done in
             sut.getCategories { (result) in
               switch result {
@@ -71,7 +67,6 @@ final class ChuckNorrisWebserviceSpec: QuickSpec {
         }
 
         it("should return the correct number of jokes") {
-          service.cancelAllRequests()
           waitUntil { done in
             sut.getJokesBySearching(query: "") { (result) in
               switch result {
@@ -86,7 +81,6 @@ final class ChuckNorrisWebserviceSpec: QuickSpec {
         }
 
       }
-
     }
   }
 }
