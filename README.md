@@ -45,5 +45,6 @@ $ fastlane codecoverage
 ```
 
 ## ScreenShots
-<img src="screenshots/1.png" alt="drawing" width="350"/>
-<img src="screenshots/2.png" alt="drawing" width="350"/>
+<img src="screenshots/1.png" alt="drawing" width="300"/>
+<img src="screenshots/2.png" alt="drawing" width="300"/>
+<img src="screenshots/coverage.png" alt="drawing" width="500"/>
